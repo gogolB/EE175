@@ -1,5 +1,5 @@
 function [times, gps] = simulate(scalingRatio,offset)
-    SDK_path = 'C:/Users/Cody Simons/Documents/MATLAB/EE-175/robotcar-dataset-sdk-master/'
+    SDK_path = 'C:/Users/Cody Simons/Documents/EE175/MATLAB/robotcar-dataset-sdk-master/'
     f = fopen('D:/stereo.timestamps');
     
     for i=1:offset
@@ -28,6 +28,7 @@ function [times, gps] = simulate(scalingRatio,offset)
     img_timestamp = fgetl(f);
     img_timestamp = img_timestamp(1:16);
     is_calibrated = false;
+    sz = [];
     while(ischar(img_timestamp))
         left = LoadImage('D:/stereo/left/',str2double(img_timestamp),l_LUT);
         left = imresize(left,scalingRatio);
@@ -35,6 +36,10 @@ function [times, gps] = simulate(scalingRatio,offset)
         right = imresize(right,scalingRatio);
         center = LoadImage('D:/stereo/centre',str2double(img_timestamp),c_LUT);
         center = imresize(center,scalingRatio);
+        
+        if isempty(sz)
+            sz =size(left);
+        end
         
         left_gray = rgb2gray(left);
         right_gray = rgb2gray(right);
@@ -53,9 +58,9 @@ function [times, gps] = simulate(scalingRatio,offset)
 %         [lc_left, lc_center] = rectifyStereoImages(left_gray, center_gray, tform_lc(1), tform_lc(2));
 %         [cr_center, cr_right] = rectifyStereoImages(center_gray, right_gray, tform_cr(1), tform_cr(2));
         
-        l_features = detectSURFFeatures(left_gray);
-        r_features = detectSURFFeatures(right_gray);
-        c_features = detectSURFFeatures(center_gray);
+        l_features = detectFASTFeatures(left_gray);
+        r_features = detectFASTFeatures(right_gray);
+        c_features = detectFASTFeatures(center_gray);
         
         [fl,vptsl] = extractFeatures(left_gray,l_features);
         [fr,vptsr] = extractFeatures(right_gray,r_features);
@@ -65,14 +70,14 @@ function [times, gps] = simulate(scalingRatio,offset)
         pair_lc = matchFeatures(fl,fc);
         pair_cr = matchFeatures(fc,fr);
         
-        points_l = ((vptsl.Location' - [l_cx; l_cy])./[l_fx;l_fy]).*(pixel_size/scalingRatio);
-        points_r = ((vptsr.Location' - [r_cx; r_cy])./[r_fx;r_fy]).*(pixel_size/scalingRatio);
-        points_c = ((vptsc.Location' - [c_cx; c_cy])./[c_fx;c_fy]).*(pixel_size/scalingRatio);
+        points_l = ((vptsl.Location - [l_cx l_cy])./[l_fx l_fy]).*(pixel_size/scalingRatio);
+        points_r = ((vptsr.Location - [r_cx r_cy])./[r_fx r_fy]).*(pixel_size/scalingRatio);
+        points_c = ((vptsc.Location - [c_cx c_cy])./[c_fx c_fy]).*(pixel_size/scalingRatio);
         
         points3_lr = ones([4,size(pair_lr,1)]);
-        points3_lr(3,:) = (focal_length*0.24)./(points_l(1,pair_lr(:,1))-points_r(1,pair_lr(:,2)));
-        points3_lr(1,:) = (points3_lr(3,:)./focal_length).*points_l(1,pair_lr(:,1));
-        points3_lr(2,:) = (points3_lr(3,:)./focal_length).*points_l(2,pair_lr(:,1));
+        points3_lr(3,:) = (focal_length*0.24)./(points_l(pair_lr(:,1),1)-points_r(pair_lr(:,2),1));
+        points3_lr(1,:) = (points3_lr(3,:)./focal_length).*points_l(pair_lr(:,1),1);
+        points3_lr(2,:) = (points3_lr(3,:)./focal_length).*points_l(pair_lr(:,1),2);
         points3_lr = points3_lr(:,points3_lr(3,:) ~= inf);
         points3_lr = l_G_camera_image*points3_lr;
 %         points3_lc = ones([4,size(pair_lc,1)]);
@@ -105,11 +110,11 @@ function [times, gps] = simulate(scalingRatio,offset)
         size(points_r,2)
         hold on
         scatter(vptsl.Location(pair_lr(:,1),1),vptsl.Location(pair_lr(:,1),2),'or','LineWidth',2);
-        scatter(vptsr.Location(pair_lr(:,2),1)+1280,vptsr.Location(pair_lr(:,2),2),'or','LineWidth',2);
+        scatter(vptsr.Location(pair_lr(:,2),1)+sz(2)*2,vptsr.Location(pair_lr(:,2),2),'or','LineWidth',2);
 %        scatter(vptsl.Location(pair_lc(:,1),1),vptsl.Location(pair_lc(:,1),2),'og','LineWidth',2);
-%        scatter(vptsc.Location(pair_lc(:,2),1)+640,vptsc.Location(pair_lc(:,2),2),'og','LineWidth',2);
-%        scatter(vptsc.Location(pair_cr(:,1),1)+640,vptsc.Location(pair_cr(:,1),2),'om','LineWidth',2);
-%        scatter(vptsr.Location(pair_cr(:,2),1)+1280,vptsr.Location(pair_cr(:,2),2),'om','LineWidth',2);
+%        scatter(vptsc.Location(pair_lc(:,2),1)+sz(2),vptsc.Location(pair_lc(:,2),2),'og','LineWidth',2);
+%        scatter(vptsc.Location(pair_cr(:,1),1)+sz(2),vptsc.Location(pair_cr(:,1),2),'om','LineWidth',2);
+%        scatter(vptsr.Location(pair_cr(:,2),1)+sz(2)*2,vptsr.Location(pair_cr(:,2),2),'om','LineWidth',2);
         pause(0.01);
         
         img_timestamp = fgetl(f);
