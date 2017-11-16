@@ -62,7 +62,7 @@ module sccb #(parameter CLK = 24000000) (    // system clock at 24MHz
         case(state)
             IDLE: begin
                 reg_loc = reg_loc_val;  // set reg loc to update addr_data
-                if(ready) begin // ready to send new data
+                if(ready && reg_loc_val < 73) begin // ready to send new data
                     state = START_TX;   // ready to start tx
                     addr = addr_data[15:8]; // store current reg addr
                     data = addr_data[7:0];  // store current reg data
@@ -122,27 +122,36 @@ module sccb #(parameter CLK = 24000000) (    // system clock at 24MHz
                     sda_out = 0;    // don't care bit (end of phase)
                     phase++;
                 end
-                if(phase < 3) begin // still in phase 
-                    wait_time = 7;  // wait for sda`
-                    state = WAIT;
-                    state_return = LOAD_DATA;
+                wait_time = 15;  // wait for sda_out to stabilize and end of scl high(min 15)
+                state = WAIT;
+                state_return = LOAD_DATA;
             end
 
             END_BIT: begin
                 scl = 0;
                 wait_time = 7;  // wait for scl to stabilize(max 7)
                 state = WAIT;
-                state_return = LOAD_DATA;
+                if(phase < 3) begin // still in phase
+                    state_return = LOAD_DATA;
+                end
+                else begin    // end of phase 3 tx
+                    state_return = STOP_DATA_TX;
+                end
             end
 
             STOP_DATA_TX: begin
-                state = STOP_TX;
                 scl = 1;    // pull high to stop data tx
+                wait_time = 22;  // wait for scl to stabilize and end of t_SU:STO(min 22)
+                state = WAIT;
+                state_return = STOP_TX;
             end
 
             STOP_TX: begin
-                state = IDLE;
                 sda_out = 1;    // pull high to stop tx
+                wait_time = 38;  // wait for sda to stabilize and duration of t_BUF(min 38)
+                state = WAIT;
+                state_return = IDLE;
+                ready = 1;
             end
 
             WAIT: begin
