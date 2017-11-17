@@ -25,6 +25,10 @@ module cameraReg(
 	input wire [7:0] addr,
 	output reg [15:0] addr_data
 	);
+	
+	initial begin
+		 addr_data = 16'h12_80; // SCCB register reset
+	end
 
 //FFFF is end of rom, FFF0 is delay
 always @(posedge clk) begin

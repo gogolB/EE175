@@ -15,61 +15,57 @@
 // 
 // Revision:
 // Revision 0.01 - File Created
-// Additional Comments:
+// Additional Comments: 
 // 
 /////////////////////////////////////////////////////////////////////////////////
 
 module sccb #(parameter CLK = 24000000) (    // system clock at 24MHz
     input wire clk,
-    input [15:0] addr_data;
+    input wire [15:0] addr_data,
     input wire sda_in,  // ack from slave
-    output wire reg_loc,    // location in cameraReg to get addr_data
-    output wire scl,    // sccb clock
-    output wire sda_out);   // sccb data time
-
-    reg [7:0] addr; // address of camera reg
-    reg [7:0] data; // data to modify camera reg
+    output reg [7:0] reg_loc,    // location in cameraReg to get addr_data
+    output reg scl,    // sccb clock
+    output reg sda_out);   // sccb data time
     
-    localparam CAMERA_ID_W = 0x84;    // Address to write to camera regs
+    localparam CAMERA_ID_W = 8'h84;    // Address to write to camera regs
     localparam IDLE = 0;
     localparam START_TX = 1;
     localparam START_DATA_TX = 2;
-    localparam LOAD_DATA = 3;
-    localparam SEND_BIT = 4;
-    localparam STOP_DATA_TX = 5;
-    localparam STOP_TX = 6;
-    localparam WAIT = 7;
+	localparam LOAD_FIRST_BIT = 3;
+    localparam LOAD_DATA = 4;
+    localparam SEND_BIT = 5;
+	localparam END_BIT = 6;
+    localparam STOP_DATA_TX = 7;
+    localparam STOP_TX = 8;
+    localparam WAIT = 9;
 
-    reg [2:0] state;    // FSM state
-    reg [2:0] state_return; // FSM state to return to after wait
-    reg [1:0] phase;    // data tx phase
-    reg [3:0] i;    // data tx bit index
-    reg [7:0] reg_loc_val;  // temp storage for reg_loc output
-    reg ready;
-    reg [5:0] wait_time;    // number clk periods to wait
+    reg [3:0] state = IDLE;    // FSM state
+    reg [3:0] state_return = IDLE; // FSM state to return to after wait
+    reg [1:0] phase = 0;    // data tx phase
+    reg [3:0] i = 8;    // data tx bit index
+    reg [7:0] reg_loc_val = 0;  // temp storage for reg_loc output
+    reg ready = 1;
+    reg [5:0] wait_time = 0;    // number clk periods to wait
+    reg [7:0] tx_data = 0;	// store data to tx
+    reg [7:0] addr = 0; // address of camera reg
+    reg [7:0] data = 0; // data to modify camera reg
 
     initial begin
-        state = IDLE;   // init FSM state to idle
         scl = 1;
         sda_out = 1;
-        reg_loc_val = 0;    // start at first reg loc
-        phase = 0;
-        i = 7;  // data tx will be sent from MSB to LSB
-        ready = 1;
+		reg_loc = reg_loc_val;
     end
 
-    always@(posedge clk)
+    always@(posedge clk) begin
         case(state)
             IDLE: begin
                 reg_loc = reg_loc_val;  // set reg loc to update addr_data
-                if(ready && reg_loc_val < 73) begin // ready to send new data
+                if(ready && reg_loc < 73) begin // ready to send new data
                     state = START_TX;   // ready to start tx
-                    addr = addr_data[15:8]; // store current reg addr
-                    data = addr_data[7:0];  // store current reg data
-                    reg_loc_val++;  // increment to next reg location
+                    reg_loc_val = reg_loc_val + 1;  // increment to next reg location
                     // need to wait 600ns before next signal (t_HD:STA)
                     ready = 0;
-                end`
+                end
             end
 
             START_TX: begin
@@ -77,28 +73,29 @@ module sccb #(parameter CLK = 24000000) (    // system clock at 24MHz
                 wait_time = 22;  //  wait for sda_out to stabilize(max 7) and start condition hold time(min 15)
                 state = WAIT;
                 state_return = START_DATA_TX;
-              
-                wait_time = 7;// need to wait 300ns for scl to be stable low (t_F)
-                // need to wait 100-900ns for data out to be valid (t_AA)
                 // need to wait (t_LOW)1.3us - t_AA before scl pulls high
-                
-                state = START_DATA_TX;
-            end
+             end
 
             START_DATA_TX: begin
+				addr = addr_data[15:8]; // store current reg addr
+                data = addr_data[7:0];  // store current reg data
                 scl = 0;    // pull scl low to signal start of data tx
-                wait_time = 7;  // wait for scl to stabilize(max 7)
+                wait_time = 10;  // wait for scl to stabilize(max 7) and low to data out valid(3-21) minus sda stabilize(max 7)
                 state = WAIT;
                 state_return = LOAD_DATA;
                 // scl stays high for 600ns (t_HIGH)
             end
+				
+			LOAD_FIRST_BIT: begin	// phase = 0, i = 8
+				 sda_out = CAMERA_ID_W[i-1];	// load bit 7 of ID
+				 i = i - 1;	// set to next bit
+				 wait_time = 28;	// wait for sda to stabilize(max 7) and finish scl low time
+				 state = WAIT;
+				 state_return = SEND_BIT;
+			end
 
             LOAD_DATA: begin
-                scl = 1;    // pull high to send bit
-                wait_time = 7;  // wait for scl to stabilize(max 7)
-                state = WAIT;
-                state_return = SEND_BIT;
-                case(phase)
+			    case(phase)
                     0: begin
                         tx_data = CAMERA_ID_W;
                     end
@@ -111,31 +108,38 @@ module sccb #(parameter CLK = 24000000) (    // system clock at 24MHz
                         tx_data = data;
                     end
                 endcase
-            end
-    
-            SEND_BIT: begin
-                if(i >= 0) begin
-                    sda_out = tx_data[i]
-                    i--;
+                if(i > 0) begin
+                    sda_out = tx_data[i-1];
+                    i = i - 1;
                 end
                 else begin  // sent 8 bits
                     sda_out = 0;    // don't care bit (end of phase)
-                    phase++;
+                    phase = phase + 1;	// go to next phase
+						  i = 8;	// reset bit index
                 end
-                wait_time = 15;  // wait for sda_out to stabilize and end of scl high(min 15)
+                wait_time = 29;	// wait for sda to stabilize(max 7) and t_SU:DAT and finish scl low
                 state = WAIT;
-                state_return = LOAD_DATA;
+                state_return = SEND_BIT;
+                
+            end
+    
+            SEND_BIT: begin
+				scl = 1;    // pull high to send bit
+			    wait_time = 22;  // wait for scl to stabilize(max 7) and scl high period(min 15)
+                state = WAIT;
+                state_return = END_BIT;
             end
 
             END_BIT: begin
                 scl = 0;
-                wait_time = 7;  // wait for scl to stabilize(max 7)
+                wait_time = 9;  // wait for scl to stabilize(max 7) and max between t_HD:DAT and t_DH
                 state = WAIT;
                 if(phase < 3) begin // still in phase
                     state_return = LOAD_DATA;
                 end
                 else begin    // end of phase 3 tx
                     state_return = STOP_DATA_TX;
+						  phase = 0;	// reset phase val
                 end
             end
 
@@ -143,7 +147,7 @@ module sccb #(parameter CLK = 24000000) (    // system clock at 24MHz
                 scl = 1;    // pull high to stop data tx
                 wait_time = 22;  // wait for scl to stabilize and end of t_SU:STO(min 22)
                 state = WAIT;
-                state_return = STOP_TX;
+                state_return = 8;
             end
 
             STOP_TX: begin
@@ -159,10 +163,10 @@ module sccb #(parameter CLK = 24000000) (    // system clock at 24MHz
                     state = state_return;   // finished waiting; go to next step
                 end
                 else begin
-                    wait_time--;    // update wait time
+                    wait_time = wait_time - 1;    // update wait time
                 end
             end
         endcase
     end
 
-endmodule
+endmodule 
