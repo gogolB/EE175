@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Thu Nov 16 16:50:57 2017
+# Process ID: 15068
+# Current directory: C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/ArduCamModule/ArduCamModule.runs/synth_1
+# Command line: vivado.exe -log CameraController.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source CameraController.tcl
+# Log file: C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/ArduCamModule/ArduCamModule.runs/synth_1/CameraController.vds
+# Journal file: C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/ArduCamModule/ArduCamModule.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source CameraController.tcl -notrace

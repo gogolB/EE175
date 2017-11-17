@@ -1,13 +1,62 @@
 Vivado Simulator 2017.3
 Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2017.3/bin/unwrapped/win64.o/xelab.exe -wto 74209e4ce1f74cec882f2b26f5acadad --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot RGB565_To_Grayscale_TB_behav xil_defaultlib.RGB565_To_Grayscale_TB xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
+Running: C:/Xilinx/Vivado/2017.3/bin/unwrapped/win64.o/xelab.exe -wto 74209e4ce1f74cec882f2b26f5acadad --incr --debug typical --relax --mt off -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot RGB565_To_Grayscale_TB_behav xil_defaultlib.RGB565_To_Grayscale_TB xil_defaultlib.glbl -log elaborate.log -v 1 
+Turned off multi-threading.
+INFO: [XSIM 43-3427] Library Mapping: Sourcing library mapping file "C:\Xilinx\Vivado\2017.3\data/xsim/xsim.ini".
+INFO: [VRFC 10-233] The vhdl library search path for library "std" is now "C:/Xilinx/Vivado/2017.3/data/xsim/vhdl/std_2008"
+INFO: [VRFC 10-232] The veri library search path for library "std" is now "C:/Xilinx/Vivado/2017.3/data/xsim/vhdl/std_2008"
+INFO: [VRFC 10-233] The vhdl library search path for library "ieee" is now "C:/Xilinx/Vivado/2017.3/data/xsim/vhdl/ieee_2008"
+INFO: [VRFC 10-232] The veri library search path for library "ieee" is now "C:/Xilinx/Vivado/2017.3/data/xsim/vhdl/ieee_2008"
+INFO: [VRFC 10-233] The vhdl library search path for library "ieee_proposed" is now "C:/Xilinx/Vivado/2017.3/data/xsim/vhdl/ieee_proposed_2008"
+INFO: [VRFC 10-232] The veri library search path for library "ieee_proposed" is now "C:/Xilinx/Vivado/2017.3/data/xsim/vhdl/ieee_proposed_2008"
+INFO: [VRFC 10-233] The vhdl library search path for library "vl" is now "C:/Xilinx/Vivado/2017.3/data/xsim/vhdl/vl_2008"
+INFO: [VRFC 10-232] The veri library search path for library "vl" is now "C:/Xilinx/Vivado/2017.3/data/xsim/vhdl/vl_2008"
+INFO: [VRFC 10-233] The vhdl library search path for library "synopsys" is now "C:/Xilinx/Vivado/2017.3/data/xsim/vhdl/synopsys_2008"
+INFO: [VRFC 10-232] The veri library search path for library "synopsys" is now "C:/Xilinx/Vivado/2017.3/data/xsim/vhdl/synopsys_2008"
+INFO: [VRFC 10-233] The vhdl library search path for library "unisim" is now "C:/Xilinx/Vivado/2017.3/data/xsim/vhdl/unisim"
+INFO: [VRFC 10-232] The veri library search path for library "unisim" is now "C:/Xilinx/Vivado/2017.3/data/xsim/vhdl/unisim"
+INFO: [VRFC 10-233] The vhdl library search path for library "unimacro" is now "C:/Xilinx/Vivado/2017.3/data/xsim/vhdl/unimacro"
+INFO: [VRFC 10-232] The veri library search path for library "unimacro" is now "C:/Xilinx/Vivado/2017.3/data/xsim/vhdl/unimacro"
+INFO: [VRFC 10-233] The vhdl library search path for library "unifast" is now "C:/Xilinx/Vivado/2017.3/data/xsim/vhdl/unifast"
+INFO: [VRFC 10-232] The veri library search path for library "unifast" is now "C:/Xilinx/Vivado/2017.3/data/xsim/vhdl/unifast"
+INFO: [VRFC 10-233] The vhdl library search path for library "simprims_ver" is now "C:/Xilinx/Vivado/2017.3/data/xsim/verilog/simprims_ver"
+INFO: [VRFC 10-232] The veri library search path for library "simprims_ver" is now "C:/Xilinx/Vivado/2017.3/data/xsim/verilog/simprims_ver"
+INFO: [VRFC 10-233] The vhdl library search path for library "unisims_ver" is now "C:/Xilinx/Vivado/2017.3/data/xsim/verilog/unisims_ver"
+INFO: [VRFC 10-232] The veri library search path for library "unisims_ver" is now "C:/Xilinx/Vivado/2017.3/data/xsim/verilog/unisims_ver"
+INFO: [VRFC 10-233] The vhdl library search path for library "unimacro_ver" is now "C:/Xilinx/Vivado/2017.3/data/xsim/verilog/unimacro_ver"
+INFO: [VRFC 10-232] The veri library search path for library "unimacro_ver" is now "C:/Xilinx/Vivado/2017.3/data/xsim/verilog/unimacro_ver"
+INFO: [VRFC 10-233] The vhdl library search path for library "unifast_ver" is now "C:/Xilinx/Vivado/2017.3/data/xsim/verilog/unifast_ver"
+INFO: [VRFC 10-232] The veri library search path for library "unifast_ver" is now "C:/Xilinx/Vivado/2017.3/data/xsim/verilog/unifast_ver"
+INFO: [VRFC 10-233] The vhdl library search path for library "secureip" is now "C:/Xilinx/Vivado/2017.3/data/xsim/verilog/secureip"
+INFO: [VRFC 10-232] The veri library search path for library "secureip" is now "C:/Xilinx/Vivado/2017.3/data/xsim/verilog/secureip"
+INFO: [XSIM 43-3427] Library Mapping: Sourcing library mapping file "xsim.ini".
+INFO: [VRFC 10-233] The vhdl library search path for library "xil_defaultlib" is now "C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/ArduCamModule/ArduCamModule.sim/sim_1/behav/xsim/xsim.dir/xil_defaultlib"
+INFO: [VRFC 10-232] The veri library search path for library "xil_defaultlib" is now "C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/ArduCamModule/ArduCamModule.sim/sim_1/behav/xsim/xsim.dir/xil_defaultlib"
+INFO: [VRFC 10-233] The vhdl library search path for library "xil_defaultlib" is now "C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/ArduCamModule/ArduCamModule.sim/sim_1/behav/xsim/xsim.dir/xil_defaultlib"
+INFO: [VRFC 10-232] The veri library search path for library "xil_defaultlib" is now "C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/ArduCamModule/ArduCamModule.sim/sim_1/behav/xsim/xsim.dir/xil_defaultlib"
+INFO: [VRFC 10-233] The vhdl library search path for library "unisims_ver" is now "C:/Xilinx/Vivado/2017.3/data/xsim/verilog/unisims_ver"
+INFO: [VRFC 10-232] The veri library search path for library "unisims_ver" is now "C:/Xilinx/Vivado/2017.3/data/xsim/verilog/unisims_ver"
+INFO: [VRFC 10-233] The vhdl library search path for library "unimacro_ver" is now "C:/Xilinx/Vivado/2017.3/data/xsim/verilog/unimacro_ver"
+INFO: [VRFC 10-232] The veri library search path for library "unimacro_ver" is now "C:/Xilinx/Vivado/2017.3/data/xsim/verilog/unimacro_ver"
+INFO: [VRFC 10-233] The vhdl library search path for library "secureip" is now "C:/Xilinx/Vivado/2017.3/data/xsim/verilog/secureip"
+INFO: [VRFC 10-232] The veri library search path for library "secureip" is now "C:/Xilinx/Vivado/2017.3/data/xsim/verilog/secureip"
+INFO: [VRFC 10-233] The vhdl library search path for library "work" is now "C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/ArduCamModule/ArduCamModule.sim/sim_1/behav/xsim/xsim.dir/work"
+INFO: [VRFC 10-232] The veri library search path for library "work" is now "C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/ArduCamModule/ArduCamModule.sim/sim_1/behav/xsim/xsim.dir/work"
 Starting static elaboration
+INFO: [VRFC 10-520] compiling module RGB565_To_Grayscale_TB [C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/ArduCamModule/ArduCamModule.srcs/sim_1/new/RGB565_To_Grayscale_TB.v:23]
+INFO: [VRFC 10-520] compiling module glbl [C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/ArduCamModule/ArduCamModule.sim/sim_1/behav/xsim/glbl.v:6]
 Completed static elaboration
+INFO: [XSIM 43-4308] CRC for module RGB565_To_Grayscale is 1647121060
+INFO: [XSIM 43-4308] CRC for module RGB565_To_Grayscale_TB is -1182966174
+INFO: [XSIM 43-4308] CRC for module glbl is 1818389607
 Starting simulation data flow analysis
 Completed simulation data flow analysis
+SDG Object Count: 167, SDG Object Memory Usage: 21 KB.
 Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.RGB565_To_Grayscale
 Compiling module xil_defaultlib.RGB565_To_Grayscale_TB
 Compiling module xil_defaultlib.glbl
+C:\Xilinx\Vivado\2017.3\data\..\tps\mingw\6.2.0\win64.o\nt\bin\gcc.exe -c -Wa,-W  -I"C:\Xilinx\Vivado\2017.3\data/xsim/include" "xsim.dir/RGB565_To_Grayscale_TB_behav/obj/xsim_1.c" -O  -o "xsim.dir/RGB565_To_Grayscale_TB_behav/obj/xsim_1.win64.obj"
+Linking with command:
+C:\Xilinx\Vivado\2017.3\data\..\tps\mingw\6.2.0\win64.o\nt\bin\gcc.exe -Wa,-W  -O -Wl,--stack,104857600 -o "xsim.dir/RGB565_To_Grayscale_TB_behav/xsimk.exe"   "xsim.dir/RGB565_To_Grayscale_TB_behav/obj/xsim_0.win64.obj" "xsim.dir/RGB565_To_Grayscale_TB_behav/obj/xsim_1.win64.obj" "C:\Xilinx\Vivado\2017.3\lib\win64.o\\librdi_simulator_kernel.dll" "C:\Xilinx\Vivado\2017.3\lib\win64.o\\librdi_simbridge_kernel.dll"
 Built simulation snapshot RGB565_To_Grayscale_TB_behav
