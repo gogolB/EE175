@@ -1,0 +1,3 @@
+Vivado Simulator 2017.3
+Time resolution is 1 ps
+$finish called at time : 110 ns : File "C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/ArduCamModule/ArduCamModule.srcs/sim_1/new/RGB565_To_Grayscale_TB.v" Line 47

@@ -2,13 +2,13 @@
 # Webtalk v2017.3 (64-bit)
 # SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
 # IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
-# Start of session at: Tue Nov 28 11:04:30 2017
-# Process ID: 19684
+# Start of session at: Fri Nov 17 11:04:15 2017
+# Process ID: 8772
 # Current directory: C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/ArduCamModule/ArduCamModule.sim/sim_1/behav/xsim
 # Command line: wbtcv.exe -mode batch -source C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/ArduCamModule/ArduCamModule.sim/sim_1/behav/xsim/xsim.dir/RGB565_To_Grayscale_TB_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/ArduCamModule/ArduCamModule.sim/sim_1/behav/xsim/webtalk.log
 # Journal file: C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/ArduCamModule/ArduCamModule.sim/sim_1/behav/xsim\webtalk.jou
 #-----------------------------------------------------------
 source C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/ArduCamModule/ArduCamModule.sim/sim_1/behav/xsim/xsim.dir/RGB565_To_Grayscale_TB_behav/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-186] 'C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/ArduCamModule/ArduCamModule.sim/sim_1/behav/xsim/xsim.dir/RGB565_To_Grayscale_TB_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Tue Nov 28 11:04:34 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2017.3/doc/webtalk_introduction.html.
-INFO: [Common 17-206] Exiting Webtalk at Tue Nov 28 11:04:34 2017...
+INFO: [Common 17-186] 'C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/ArduCamModule/ArduCamModule.sim/sim_1/behav/xsim/xsim.dir/RGB565_To_Grayscale_TB_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Fri Nov 17 11:04:16 2017. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2017.3/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Fri Nov 17 11:04:16 2017...
