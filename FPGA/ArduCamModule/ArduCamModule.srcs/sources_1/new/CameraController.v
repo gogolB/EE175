@@ -21,24 +21,22 @@
 
 
 module CameraController #(parameter SYS_CLK_FRQ = 100000000,
-                          parameter XCLK_FRQ = 8'd24_000_000)(
+                          parameter XCLK_FRQ = 24_000_000)(
     // Facing Camera
     input wire [7:0] cam_byte,
     input wire pclk,
     input wire vsync,
     input wire href,
-    output reg xclk,
+    output wire xclk,
     
     // Facing System
-    input wire sys_clk,
-    output reg [15:0] pixel_data,
-    output reg out_clk
+    //input wire sys_clk,	// not needed?
+    output reg [15:0] pixel_data
+    //output reg out_clk	// not needed?
     );
 
     initial begin
-        xclk = XCLK_FRQ;
         pixel_data = 0;
-        out_clk = pclk;
     end
 
     localparam FRAME_START = 0;
@@ -47,8 +45,10 @@ module CameraController #(parameter SYS_CLK_FRQ = 100000000,
     reg [15:0] pixel = 0;
     reg byte_num = 0;
     reg state = FRAME_START;
+	 
+	 assign xclk = pclk;
 
-    always @(posedge pclk) begin
+    always @(pclk) begin
         case(state)
             FRAME_START: begin
                 if(vsync == 0) begin    // valid frame
@@ -63,14 +63,16 @@ module CameraController #(parameter SYS_CLK_FRQ = 100000000,
                 end
                 else begin  // still in frame
                     if(href == 1) begin // valid line
-                        if(byte_num == 0) begin // first byte (R3:0 G5:3)
-                            pixel[15:8] = cam_byte;
-                        end
-                        else begin  // second byte (G2:0 B3:0)
-                            pixel[7:0] = cam_byte;
-                            pixel_data = pixel; // output finished pixel data
-                        end
-                        byte_num = ~byte_num;   // switch to next byte val
+						if(pclk == 1) begin	// rising edge sends byte
+							if(byte_num == 0) begin // first byte (R3:0 G5:3)
+							    pixel[15:8] = cam_byte;
+							end
+						    else begin  // second byte (G2:0 B3:0)
+							    pixel[7:0] = cam_byte;
+							    pixel_data = pixel; // output finished pixel data
+						    end
+						    byte_num = ~byte_num;   // switch to next byte val
+					    end
                     end
                 end
             end
@@ -78,3 +80,4 @@ module CameraController #(parameter SYS_CLK_FRQ = 100000000,
     end
 
 endmodule
+
