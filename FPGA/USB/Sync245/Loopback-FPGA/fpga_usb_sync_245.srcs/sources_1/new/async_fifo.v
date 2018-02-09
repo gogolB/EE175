@@ -26,7 +26,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module async_fifo#(parameter datawidth = 8, parameter datadepth = 128)(
+module async_fifo#(parameter datawidth = 8, parameter DATADEPTH = 128, parameter addresswidth = $clog2(DATADEPTH))(
     input wire reset,
     
     // Reading
@@ -44,9 +44,7 @@ module async_fifo#(parameter datawidth = 8, parameter datadepth = 128)(
     output reg empty
     );
     
-    localparam addresswidth = $clog2(datadepth);
-    
-    reg[datawidth - 1:0] memory[datadepth-1:0];
+    reg[datawidth - 1:0] memory[DATADEPTH-1:0];
     wire [addresswidth-1:0] pNextToWrite, pNextToRead;
     wire equalAddresses;
     wire NextWriteAddr_en,NextReadAddr_en;
@@ -70,8 +68,8 @@ module async_fifo#(parameter datawidth = 8, parameter datadepth = 128)(
         end
     end 
     
-    assign NextWriteAddr_en = write_en & ~empty;
-    assign NextReadAddr_en = read_en & ~full;
+    assign NextWriteAddr_en = write_en & ~full;
+    assign NextReadAddr_en = read_en & ~empty;
     
     // Addressing for writing
     graycounter #(.counterwidth(addresswidth)) pWrite_counter(

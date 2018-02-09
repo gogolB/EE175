@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="Sync_245_Test_Bench_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="Sync_245_Test_Bench" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="975240000fs"></ZoomStartTime>
+      <ZoomEndTime time="984240001fs"></ZoomEndTime>
+      <Cursor1Time time="983769000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="116"></NameColumnWidth>
+      <ValueColumnWidth column_width="58"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="6" />
+   <wvobject fp_name="/Sync_245_Test_Bench/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="group73" type="group">
+      <obj_property name="label">FT232H</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/Sync_245_Test_Bench/CLKIN" type="logic">
+         <obj_property name="ElementShortName">CLKIN</obj_property>
+         <obj_property name="ObjectShortName">CLKIN</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sync_245_Test_Bench/d" type="array">
+         <obj_property name="ElementShortName">d[7:0]</obj_property>
+         <obj_property name="ObjectShortName">d[7:0]</obj_property>
+      </wvobject>
+      <wvobject type="divider" fp_name="divider78">
+         <obj_property name="label">Flags</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sync_245_Test_Bench/rxf" type="logic">
+         <obj_property name="ElementShortName">rxf</obj_property>
+         <obj_property name="ObjectShortName">rxf</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sync_245_Test_Bench/txe" type="logic">
+         <obj_property name="ElementShortName">txe</obj_property>
+         <obj_property name="ObjectShortName">txe</obj_property>
+      </wvobject>
+      <wvobject type="divider" fp_name="divider79">
+         <obj_property name="label">Controls</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sync_245_Test_Bench/wr" type="logic">
+         <obj_property name="ElementShortName">wr</obj_property>
+         <obj_property name="ObjectShortName">wr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sync_245_Test_Bench/rd" type="logic">
+         <obj_property name="ElementShortName">rd</obj_property>
+         <obj_property name="ObjectShortName">rd</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sync_245_Test_Bench/oe" type="logic">
+         <obj_property name="ElementShortName">oe</obj_property>
+         <obj_property name="ObjectShortName">oe</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group74" type="group">
+      <obj_property name="label">Implementation</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/Sync_245_Test_Bench/inData" type="array">
+         <obj_property name="ElementShortName">inData[7:0]</obj_property>
+         <obj_property name="ObjectShortName">inData[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sync_245_Test_Bench/inClk" type="logic">
+         <obj_property name="ElementShortName">inClk</obj_property>
+         <obj_property name="ObjectShortName">inClk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sync_245_Test_Bench/inEn" type="logic">
+         <obj_property name="ElementShortName">inEn</obj_property>
+         <obj_property name="ObjectShortName">inEn</obj_property>
+      </wvobject>
+      <wvobject type="divider" fp_name="divider77">
+         <obj_property name="label">I/O</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sync_245_Test_Bench/outData" type="array">
+         <obj_property name="ElementShortName">outData[7:0]</obj_property>
+         <obj_property name="ObjectShortName">outData[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sync_245_Test_Bench/outClk" type="logic">
+         <obj_property name="ElementShortName">outClk</obj_property>
+         <obj_property name="ObjectShortName">outClk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sync_245_Test_Bench/outEn" type="logic">
+         <obj_property name="ElementShortName">outEn</obj_property>
+         <obj_property name="ObjectShortName">outEn</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group75" type="group">
+      <obj_property name="label">Data</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/Sync_245_Test_Bench/d_to_host" type="array">
+         <obj_property name="ElementShortName">d_to_host[7:0]</obj_property>
+         <obj_property name="ObjectShortName">d_to_host[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sync_245_Test_Bench/d_from_host" type="array">
+         <obj_property name="ElementShortName">d_from_host[7:0]</obj_property>
+         <obj_property name="ObjectShortName">d_from_host[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sync_245_Test_Bench/d_output_mode" type="logic">
+         <obj_property name="ElementShortName">d_output_mode</obj_property>
+         <obj_property name="ObjectShortName">d_output_mode</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group76" type="group">
+      <obj_property name="label">Internal</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/Sync_245_Test_Bench/uut/state" type="array">
+         <obj_property name="ElementShortName">state[2:0]</obj_property>
+         <obj_property name="ObjectShortName">state[2:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group87" type="group">
+      <obj_property name="label">TX FIFO</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/Sync_245_Test_Bench/uut/dataTxFifo/read_clk" type="logic">
+         <obj_property name="ElementShortName">read_clk</obj_property>
+         <obj_property name="ObjectShortName">read_clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sync_245_Test_Bench/uut/dataTxFifo/outputData" type="array">
+         <obj_property name="ElementShortName">outputData[7:0]</obj_property>
+         <obj_property name="ObjectShortName">outputData[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sync_245_Test_Bench/uut/dataTxFifo/read_en" type="logic">
+         <obj_property name="ElementShortName">read_en</obj_property>
+         <obj_property name="ObjectShortName">read_en</obj_property>
+      </wvobject>
+      <wvobject type="divider" fp_name="divider80">
+         <obj_property name="label">RD/WR</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sync_245_Test_Bench/uut/dataTxFifo/write_clk" type="logic">
+         <obj_property name="ElementShortName">write_clk</obj_property>
+         <obj_property name="ObjectShortName">write_clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sync_245_Test_Bench/uut/dataTxFifo/inputData" type="array">
+         <obj_property name="ElementShortName">inputData[7:0]</obj_property>
+         <obj_property name="ObjectShortName">inputData[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sync_245_Test_Bench/uut/dataTxFifo/write_en" type="logic">
+         <obj_property name="ElementShortName">write_en</obj_property>
+         <obj_property name="ObjectShortName">write_en</obj_property>
+      </wvobject>
+      <wvobject type="divider" fp_name="divider90">
+         <obj_property name="label">INTERNAL</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sync_245_Test_Bench/uut/dataTxFifo/memory" type="array">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">memory[127:0][7:0]</obj_property>
+         <obj_property name="ObjectShortName">memory[127:0][7:0]</obj_property>
+         <obj_property name="label">memory[5:0][7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sync_245_Test_Bench/uut/dataTxFifo/pNextToWrite" type="array">
+         <obj_property name="ElementShortName">pNextToWrite[6:0]</obj_property>
+         <obj_property name="ObjectShortName">pNextToWrite[6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sync_245_Test_Bench/uut/dataTxFifo/pNextToRead" type="array">
+         <obj_property name="ElementShortName">pNextToRead[6:0]</obj_property>
+         <obj_property name="ObjectShortName">pNextToRead[6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Sync_245_Test_Bench/uut/dataTxFifo/empty" type="logic">
+         <obj_property name="ElementShortName">empty</obj_property>
+         <obj_property name="ObjectShortName">empty</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

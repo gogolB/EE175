@@ -1,0 +1,12 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../FT232H.srcs/sources_1/new/Sync_245_Controller.v" \
+"../../../../../Loopback-FPGA/fpga_usb_sync_245.srcs/sources_1/new/async_fifo.v" \
+"../../../../../Loopback-FPGA/fpga_usb_sync_245.srcs/sources_1/new/graycounter.v" \
+"../../../../FT232H.srcs/sim_1/new/Sync_245_Test_Bench.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
