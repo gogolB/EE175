@@ -1,6 +1,6 @@
 webtalk_init -webtalk_dir C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.sim/sim_1/behav/xsim/xsim.dir/Sync_245_Test_Bench_behav/webtalk/
 webtalk_register_client -client project
-webtalk_add_data -client project -key date_generated -value "Fri Feb  9 17:50:07 2018" -context "software_version_and_target_device"
+webtalk_add_data -client project -key date_generated -value "Fri Feb  9 19:24:27 2018" -context "software_version_and_target_device"
 webtalk_add_data -client project -key product_version -value "XSIM v2017.3 (64-bit)" -context "software_version_and_target_device"
 webtalk_add_data -client project -key build_version -value "2018833" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_platform -value "WIN64" -context "software_version_and_target_device"
@@ -14,7 +14,7 @@ webtalk_add_data -client project -key target_package -value "not_applicable" -co
 webtalk_add_data -client project -key target_speed -value "not_applicable" -context "software_version_and_target_device"
 webtalk_add_data -client project -key random_id -value "d4a16659-8017-475d-8191-7f06c5bab6c3" -context "software_version_and_target_device"
 webtalk_add_data -client project -key project_id -value "1a2c58ba4045434891d021b139afbf20" -context "software_version_and_target_device"
-webtalk_add_data -client project -key project_iteration -value "87" -context "software_version_and_target_device"
+webtalk_add_data -client project -key project_iteration -value "103" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_name -value "Microsoft Windows 8 or later , 64-bit" -context "user_environment"
 webtalk_add_data -client project -key os_release -value "major release  (build 9200)" -context "user_environment"
 webtalk_add_data -client project -key cpu_name -value "Intel(R) Core(TM) i7-4700MQ CPU @ 2.40GHz" -context "user_environment"
@@ -36,7 +36,7 @@ webtalk_add_data -client xsim -key Total_Nets -value "0" -context "xsim\\usage"
 webtalk_add_data -client xsim -key Total_Processes -value "76" -context "xsim\\usage"
 webtalk_add_data -client xsim -key Total_Instances -value "9" -context "xsim\\usage"
 webtalk_add_data -client xsim -key Xilinx_HDL_Libraries_Used -value "secureip unimacro_ver unisims_ver " -context "xsim\\usage"
-webtalk_add_data -client xsim -key Compiler_Time -value "0.59_sec" -context "xsim\\usage"
-webtalk_add_data -client xsim -key Compiler_Memory -value "47188_KB" -context "xsim\\usage"
-webtalk_transmit -clientid 84241703 -regid "" -xml C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.sim/sim_1/behav/xsim/xsim.dir/Sync_245_Test_Bench_behav/webtalk/usage_statistics_ext_xsim.xml -html C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.sim/sim_1/behav/xsim/xsim.dir/Sync_245_Test_Bench_behav/webtalk/usage_statistics_ext_xsim.html -wdm C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.sim/sim_1/behav/xsim/xsim.dir/Sync_245_Test_Bench_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
+webtalk_add_data -client xsim -key Compiler_Time -value "0.58_sec" -context "xsim\\usage"
+webtalk_add_data -client xsim -key Compiler_Memory -value "47196_KB" -context "xsim\\usage"
+webtalk_transmit -clientid 4112783562 -regid "" -xml C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.sim/sim_1/behav/xsim/xsim.dir/Sync_245_Test_Bench_behav/webtalk/usage_statistics_ext_xsim.xml -html C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.sim/sim_1/behav/xsim/xsim.dir/Sync_245_Test_Bench_behav/webtalk/usage_statistics_ext_xsim.html -wdm C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.sim/sim_1/behav/xsim/xsim.dir/Sync_245_Test_Bench_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
 webtalk_terminate

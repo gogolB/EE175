@@ -1,6 +1,4 @@
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.sim/sim_1/impl/timing/xsim/Sync_245_Test_Bench_time_impl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module RAM64M_UNIQ_BASE_
-INFO: [VRFC 10-311] analyzing module RAM64X1D_UNIQ_BASE_
 INFO: [VRFC 10-311] analyzing module Scaler_Streamer_Top_Block
 INFO: [VRFC 10-311] analyzing module Sync_245_Controller
 INFO: [VRFC 10-311] analyzing module async_fifo

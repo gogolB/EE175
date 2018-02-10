@@ -62,91 +62,24 @@ proc step_failed { step } {
 
 set_msg_config -id {Common 17-41} -limit 10000000
 
-start_step init_design
-set ACTIVE_STEP init_design
+start_step write_bitstream
+set ACTIVE_STEP write_bitstream
 set rc [catch {
-  create_msg_db init_design.pb
-  create_project -in_memory -part xc7a100tcsg324-1
-  set_property board_part numato.com:neso:part0:1.0 [current_project]
-  set_property design_mode GateLvl [current_fileset]
-  set_param project.singleFileAddWarning.threshold 0
+  create_msg_db write_bitstream.pb
+  open_checkpoint Scaler_Streamer_Top_Block_routed.dcp
   set_property webtalk.parent_dir C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.cache/wt [current_project]
-  set_property parent.project_path C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.xpr [current_project]
-  set_property ip_output_repo C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.cache/ip [current_project]
-  set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES XPM_CDC [current_project]
-  add_files -quiet C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.runs/synth_1/Scaler_Streamer_Top_Block.dcp
-  read_ip -quiet c:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
-  read_xdc C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/constrs_1/new/Sync_Scaler_Constraint.xdc
-  link_design -top Scaler_Streamer_Top_Block -part xc7a100tcsg324-1
-  close_msg_db -file init_design.pb
+  catch { write_mem_info -force Scaler_Streamer_Top_Block.mmi }
+  write_bitstream -force Scaler_Streamer_Top_Block.bit 
+  catch {write_debug_probes -quiet -force Scaler_Streamer_Top_Block}
+  catch {file copy -force Scaler_Streamer_Top_Block.ltx debug_nets.ltx}
+  close_msg_db -file write_bitstream.pb
 } RESULT]
 if {$rc} {
-  step_failed init_design
+  step_failed write_bitstream
   return -code error $RESULT
 } else {
-  end_step init_design
-  unset ACTIVE_STEP 
-}
-
-start_step opt_design
-set ACTIVE_STEP opt_design
-set rc [catch {
-  create_msg_db opt_design.pb
-  opt_design 
-  write_checkpoint -force Scaler_Streamer_Top_Block_opt.dcp
-  create_report "impl_1_opt_report_drc_0" "report_drc -file Scaler_Streamer_Top_Block_drc_opted.rpt -pb Scaler_Streamer_Top_Block_drc_opted.pb -rpx Scaler_Streamer_Top_Block_drc_opted.rpx"
-  close_msg_db -file opt_design.pb
-} RESULT]
-if {$rc} {
-  step_failed opt_design
-  return -code error $RESULT
-} else {
-  end_step opt_design
-  unset ACTIVE_STEP 
-}
-
-start_step place_design
-set ACTIVE_STEP place_design
-set rc [catch {
-  create_msg_db place_design.pb
-  implement_debug_core 
-  place_design 
-  write_checkpoint -force Scaler_Streamer_Top_Block_placed.dcp
-  create_report "impl_1_place_report_io_0" "report_io -file Scaler_Streamer_Top_Block_io_placed.rpt"
-  create_report "impl_1_place_report_utilization_0" "report_utilization -file Scaler_Streamer_Top_Block_utilization_placed.rpt -pb Scaler_Streamer_Top_Block_utilization_placed.pb"
-  create_report "impl_1_place_report_control_sets_0" "report_control_sets -verbose -file Scaler_Streamer_Top_Block_control_sets_placed.rpt"
-  close_msg_db -file place_design.pb
-} RESULT]
-if {$rc} {
-  step_failed place_design
-  return -code error $RESULT
-} else {
-  end_step place_design
-  unset ACTIVE_STEP 
-}
-
-start_step route_design
-set ACTIVE_STEP route_design
-set rc [catch {
-  create_msg_db route_design.pb
-  route_design 
-  write_checkpoint -force Scaler_Streamer_Top_Block_routed.dcp
-  create_report "impl_1_route_report_drc_0" "report_drc -file Scaler_Streamer_Top_Block_drc_routed.rpt -pb Scaler_Streamer_Top_Block_drc_routed.pb -rpx Scaler_Streamer_Top_Block_drc_routed.rpx"
-  create_report "impl_1_route_report_methodology_0" "report_methodology -file Scaler_Streamer_Top_Block_methodology_drc_routed.rpt -pb Scaler_Streamer_Top_Block_methodology_drc_routed.pb -rpx Scaler_Streamer_Top_Block_methodology_drc_routed.rpx"
-  create_report "impl_1_route_report_power_0" "report_power -file Scaler_Streamer_Top_Block_power_routed.rpt -pb Scaler_Streamer_Top_Block_power_summary_routed.pb -rpx Scaler_Streamer_Top_Block_power_routed.rpx"
-  create_report "impl_1_route_report_route_status_0" "report_route_status -file Scaler_Streamer_Top_Block_route_status.rpt -pb Scaler_Streamer_Top_Block_route_status.pb"
-  create_report "impl_1_route_report_timing_summary_0" "report_timing_summary -max_paths 10 -file Scaler_Streamer_Top_Block_timing_summary_routed.rpt -warn_on_violation  -rpx Scaler_Streamer_Top_Block_timing_summary_routed.rpx"
-  create_report "impl_1_route_report_incremental_reuse_0" "report_incremental_reuse -file Scaler_Streamer_Top_Block_incremental_reuse_routed.rpt"
-  create_report "impl_1_route_report_clock_utilization_0" "report_clock_utilization -file Scaler_Streamer_Top_Block_clock_utilization_routed.rpt"
-  close_msg_db -file route_design.pb
-} RESULT]
-if {$rc} {
-  write_checkpoint -force Scaler_Streamer_Top_Block_routed_error.dcp
-  step_failed route_design
-  return -code error $RESULT
-} else {
-  end_step route_design
+  end_step write_bitstream
   unset ACTIVE_STEP 
 }
 

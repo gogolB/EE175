@@ -31,7 +31,7 @@
     <Option Name="DSAVendor" Val="xilinx"/>
     <Option Name="DSABoardId" Val="neso"/>
     <Option Name="DSANumComputeUnits" Val="16"/>
-    <Option Name="WTXSimLaunchSim" Val="100"/>
+    <Option Name="WTXSimLaunchSim" Val="116"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -284,10 +284,10 @@
           <ReportConfigOption Name="dummy_option" Type="string"/>
           <ReportConfigOutputOption Name="rpx" Type="string" Value=""/>
         </ReportConfig>
-        <ReportConfig Name="impl_1_bitstream_report_webtalk_0" Spec="" RunStep="write_bitstream">
+        <ReportConfig Name="impl_1_bitstream_report_webtalk_0" Spec="" RunStep="write_bitstream" ReportFile="usage_statistics_webtalk.html">
           <ReportConfigOption Name="dummy_option" Type="string"/>
         </ReportConfig>
-        <ReportConfig Name="impl_1_bitstream_implementation_log_0" Spec="" RunStep="write_bitstream">
+        <ReportConfig Name="impl_1_bitstream_implementation_log_0" Spec="" RunStep="write_bitstream" ReportFile="Scaler_Streamer_Top_Block.vdi">
           <ReportConfigOption Name="dummy_option" Type="string"/>
         </ReportConfig>
       </ReportStrategy>

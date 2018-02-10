@@ -111,6 +111,7 @@ module Sync_245_Controller(
             
             WR_START_POST: begin
                 WR <=0;
+                sendData <=1;
             end
             
             WRITE_DATA: begin
@@ -203,6 +204,7 @@ module Sync_245_Controller(
                 end
                 else begin
                     state = WR_STOP;
+                    
                 end
             end
             

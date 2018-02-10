@@ -1,7 +1,4 @@
-Running: xsim.dir/Sync_245_Test_Bench_time_impl/xsimk.exe -simmode gui -wdb Sync_245_Test_Bench_time_impl.wdb -simrunnum 0 -socket 52946
+Running: xsim.dir/Sync_245_Test_Bench_time_impl/xsimk.exe -simmode gui -wdb Sync_245_Test_Bench_time_impl.wdb -simrunnum 0 -socket 53516
 Design successfully loaded
-Design Loading Memory Usage: 6988 KB (Peak: 6988 KB)
+Design Loading Memory Usage: 6996 KB (Peak: 6996 KB)
 Design Loading CPU Usage: 15 ms
-Simulation completed
-Simulation Memory Usage: 7684 KB (Peak: 7684 KB)
-Simulation CPU Usage: 15 ms

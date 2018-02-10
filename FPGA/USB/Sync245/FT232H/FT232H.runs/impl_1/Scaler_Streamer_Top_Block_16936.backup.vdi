@@ -1,0 +1,545 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Fri Feb  9 18:01:32 2018
+# Process ID: 16936
+# Current directory: C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.runs/impl_1
+# Command line: vivado.exe -log Scaler_Streamer_Top_Block.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source Scaler_Streamer_Top_Block.tcl -notrace
+# Log file: C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.runs/impl_1/Scaler_Streamer_Top_Block.vdi
+# Journal file: C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source Scaler_Streamer_Top_Block.tcl -notrace
+Command: link_design -top Scaler_Streamer_Top_Block -part xc7a100tcsg324-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Netlist 29-17] Analyzing 6 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.3
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [c:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc] for cell 'clkDiv/inst'
+CRITICAL WARNING: [Netlist 29-160] Cannot set property 'BOARD_PIN', because the property does not exist for objects of type 'pin'. [c:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc:4]
+Resolution: Modify the set_property command to apply the property on the correct object type. Since the property is being applied as a scoped constraint, ensure the proper connectivity of the object port objects can be translated into pin objects. This could be due to the insertion of IO Buffers between the top level terminal and cell pin. If the goal is to apply constraints that will migrate to top level ports it is required that IO Buffers manually be instanced.
+Finished Parsing XDC File [c:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc] for cell 'clkDiv/inst'
+Parsing XDC File [c:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc] for cell 'clkDiv/inst'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [c:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [c:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc:57]
+get_clocks: Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1006.906 ; gain = 466.414
+Finished Parsing XDC File [c:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc] for cell 'clkDiv/inst'
+Parsing XDC File [C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/constrs_1/new/Sync_Scaler_Constraint.xdc]
+Finished Parsing XDC File [C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/constrs_1/new/Sync_Scaler_Constraint.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+9 Infos, 0 Warnings, 1 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1006.906 ; gain = 753.609
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port ftdi_d[0] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port ftdi_d[1] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port ftdi_d[2] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port ftdi_d[3] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port ftdi_d[4] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port ftdi_d[5] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port ftdi_d[6] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port ftdi_d[7] expects both input and output buffering but the buffers are incomplete.
+INFO: [Project 1-461] DRC finished with 0 Errors, 8 Warnings
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.551 . Memory (MB): peak = 1006.906 ; gain = 0.000
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Starting Logic Optimization Task
+
+Phase 1 Retarget
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: 162ab9957
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1016.055 ; gain = 0.000
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 0 cells
+
+Phase 2 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 2 Constant propagation | Checksum: 162ab9957
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 1016.055 ; gain = 0.000
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
+
+Phase 3 Sweep
+Phase 3 Sweep | Checksum: 1fd0ee793
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 1016.055 ; gain = 0.000
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 5 cells
+
+Phase 4 BUFG optimization
+Phase 4 BUFG optimization | Checksum: 1fd0ee793
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.026 . Memory (MB): peak = 1016.055 ; gain = 0.000
+INFO: [Opt 31-389] Phase BUFG optimization created 0 cells and removed 0 cells
+
+Phase 5 Shift Register Optimization
+Phase 5 Shift Register Optimization | Checksum: 1fd0ee793
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 1016.055 ; gain = 0.000
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1016.055 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: 1fd0ee793
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 1016.055 ; gain = 0.000
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+WARNING: [Timing 38-172] LUT was found on clock network. Both rising/falling clock edges are propagated from LUT output pin. Use set_clock_sense to specify if that clock should be inverted or not. e.g. set_clock_sense -positive/-negative controller/OE_reg_i_2/O
+WARNING: [Timing 38-172] LUT was found on clock network. Both rising/falling clock edges are propagated from LUT output pin. Use set_clock_sense to specify if that clock should be inverted or not. e.g. set_clock_sense -positive/-negative controller/RD_reg_i_2/O
+WARNING: [Timing 38-172] LUT was found on clock network. Both rising/falling clock edges are propagated from LUT output pin. Use set_clock_sense to specify if that clock should be inverted or not. e.g. set_clock_sense -positive/-negative controller/WR_reg_i_2/O
+WARNING: [Timing 38-172] LUT was found on clock network. Both rising/falling clock edges are propagated from LUT output pin. Use set_clock_sense to specify if that clock should be inverted or not. e.g. set_clock_sense -positive/-negative controller/recvData_reg_i_2/O
+WARNING: [Timing 38-172] LUT was found on clock network. Both rising/falling clock edges are propagated from LUT output pin. Use set_clock_sense to specify if that clock should be inverted or not. e.g. set_clock_sense -positive/-negative controller/sendData_reg_i_2/O
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.393 | TNS=-14.097 |
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 1 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
+Number of BRAM Ports augmented: 0 newly gated: 0 Total Ports: 2
+Ending PowerOpt Patch Enables Task | Checksum: 2431c0039
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1138.965 ; gain = 0.000
+Ending Power Optimization Task | Checksum: 2431c0039
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.747 . Memory (MB): peak = 1138.965 ; gain = 122.910
+INFO: [Common 17-83] Releasing license: Implementation
+30 Infos, 13 Warnings, 1 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.039 . Memory (MB): peak = 1138.965 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.runs/impl_1/Scaler_Streamer_Top_Block_opt.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file Scaler_Streamer_Top_Block_drc_opted.rpt -pb Scaler_Streamer_Top_Block_drc_opted.pb -rpx Scaler_Streamer_Top_Block_drc_opted.rpx
+Command: report_drc -file Scaler_Streamer_Top_Block_drc_opted.rpt -pb Scaler_Streamer_Top_Block_drc_opted.pb -rpx Scaler_Streamer_Top_Block_drc_opted.rpx
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.runs/impl_1/Scaler_Streamer_Top_Block_drc_opted.rpt.
+report_drc completed successfully
+INFO: [Chipscope 16-241] No debug cores found in the current design.
+Before running the implement_debug_core command, either use the Set Up Debug wizard (GUI mode)
+or use the create_debug_core and connect_debug_core Tcl commands to insert debug cores into the design.
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port ftdi_d[0] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port ftdi_d[1] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port ftdi_d[2] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port ftdi_d[3] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port ftdi_d[4] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port ftdi_d[5] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port ftdi_d[6] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port ftdi_d[7] expects both input and output buffering but the buffers are incomplete.
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 8 Warnings
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1138.965 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 1a117aaab
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1138.965 ; gain = 0.000
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1138.965 ; gain = 0.000
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: e2652f96
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.911 . Memory (MB): peak = 1138.965 ; gain = 0.000
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 120889997
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 1138.965 ; gain = 0.000
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 120889997
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 1138.965 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: 120889997
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 1138.965 ; gain = 0.000
+
+Phase 2 Global Placement
+Phase 2 Global Placement | Checksum: 1b7b3a0d7
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1138.965 ; gain = 0.000
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 1b7b3a0d7
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1138.965 ; gain = 0.000
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 141c5a145
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1138.965 ; gain = 0.000
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 1f4887fc2
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1138.965 ; gain = 0.000
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 1f4887fc2
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1138.965 ; gain = 0.000
+
+Phase 3.5 Timing Path Optimizer
+Phase 3.5 Timing Path Optimizer | Checksum: 1f4887fc2
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1138.965 ; gain = 0.000
+
+Phase 3.6 Fast Optimization
+Phase 3.6 Fast Optimization | Checksum: 1f4887fc2
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1138.965 ; gain = 0.000
+
+Phase 3.7 Small Shape Detail Placement
+Phase 3.7 Small Shape Detail Placement | Checksum: 1213fa50c
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1138.965 ; gain = 0.000
+
+Phase 3.8 Re-assign LUT pins
+Phase 3.8 Re-assign LUT pins | Checksum: 1491404f8
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1138.965 ; gain = 0.000
+
+Phase 3.9 Pipeline Register Optimization
+Phase 3.9 Pipeline Register Optimization | Checksum: 1491404f8
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1138.965 ; gain = 0.000
+
+Phase 3.10 Fast Optimization
+Phase 3.10 Fast Optimization | Checksum: 1491404f8
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1138.965 ; gain = 0.000
+Phase 3 Detail Placement | Checksum: 1491404f8
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1138.965 ; gain = 0.000
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 23f449e2d
+
+Phase 4.1.1.1 BUFG Insertion
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
+INFO: [Place 46-31] BUFG insertion identified 0 candidate nets, 0 success, 0 skipped for placement/routing, 0 skipped for timing, 0 skipped for netlist change reason.
+Phase 4.1.1.1 BUFG Insertion | Checksum: 23f449e2d
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1138.965 ; gain = 0.000
+INFO: [Place 30-746] Post Placement Timing Summary WNS=-10.221. For the most accurate timing information please run report_timing.
+Phase 4.1.1 Post Placement Optimization | Checksum: 2a50c0a45
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 1138.965 ; gain = 0.000
+Phase 4.1 Post Commit Optimization | Checksum: 2a50c0a45
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 1138.965 ; gain = 0.000
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 2a50c0a45
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 1138.965 ; gain = 0.000
+
+Phase 4.3 Placer Reporting
+Phase 4.3 Placer Reporting | Checksum: 2a50c0a45
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 1138.965 ; gain = 0.000
+
+Phase 4.4 Final Placement Cleanup
+Phase 4.4 Final Placement Cleanup | Checksum: 1f5e83c76
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 1138.965 ; gain = 0.000
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 1f5e83c76
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 1138.965 ; gain = 0.000
+Ending Placer Task | Checksum: 122f0b76b
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 1138.965 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+51 Infos, 21 Warnings, 1 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 1138.965 ; gain = 0.000
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.054 . Memory (MB): peak = 1138.965 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.runs/impl_1/Scaler_Streamer_Top_Block_placed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_io -file Scaler_Streamer_Top_Block_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.040 . Memory (MB): peak = 1138.965 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_utilization -file Scaler_Streamer_Top_Block_utilization_placed.rpt -pb Scaler_Streamer_Top_Block_utilization_placed.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.046 . Memory (MB): peak = 1138.965 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_control_sets -verbose -file Scaler_Streamer_Top_Block_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1138.965 ; gain = 0.000
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
+Checksum: PlaceDB: f68c4ba5 ConstDB: 0 ShapeSum: 2c646bc6 RouteDB: 0
+
+Phase 1 Build RT Design
+Phase 1 Build RT Design | Checksum: ce9151f3
+
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:25 . Memory (MB): peak = 1211.637 ; gain = 72.672
+Post Restoration Checksum: NetGraph: 2926f4b3 NumContArr: a56a5d40 Constraints: 0 Timing: 0
+
+Phase 2 Router Initialization
+
+Phase 2.1 Create Timer
+Phase 2.1 Create Timer | Checksum: ce9151f3
+
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:25 . Memory (MB): peak = 1211.637 ; gain = 72.672
+
+Phase 2.2 Fix Topology Constraints
+Phase 2.2 Fix Topology Constraints | Checksum: ce9151f3
+
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:25 . Memory (MB): peak = 1211.637 ; gain = 72.672
+
+Phase 2.3 Pre Route Cleanup
+Phase 2.3 Pre Route Cleanup | Checksum: ce9151f3
+
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:25 . Memory (MB): peak = 1211.637 ; gain = 72.672
+ Number of Nodes with overlaps = 0
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: 1c6aae2cb
+
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:25 . Memory (MB): peak = 1211.637 ; gain = 72.672
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-9.579 | TNS=-30.460| WHS=-1.026 | THS=-8.103 |
+
+Phase 2 Router Initialization | Checksum: 1ca7fd3b7
+
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:25 . Memory (MB): peak = 1211.637 ; gain = 72.672
+
+Phase 3 Initial Routing
+Phase 3 Initial Routing | Checksum: 1ac8076e3
+
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:25 . Memory (MB): peak = 1211.637 ; gain = 72.672
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-11.630| TNS=-32.603| WHS=N/A    | THS=N/A    |
+
+Phase 4.1 Global Iteration 0 | Checksum: 1512e1275
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:27 . Memory (MB): peak = 1246.750 ; gain = 107.785
+Phase 4 Rip-up And Reroute | Checksum: 1512e1275
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:27 . Memory (MB): peak = 1246.750 ; gain = 107.785
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+
+Phase 5.1.1 Update Timing
+Phase 5.1.1 Update Timing | Checksum: 1360c14ed
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:27 . Memory (MB): peak = 1246.750 ; gain = 107.785
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-11.630| TNS=-32.579| WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+Phase 5.1 Delay CleanUp | Checksum: 1bd89f9f8
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:27 . Memory (MB): peak = 1246.750 ; gain = 107.785
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 1bd89f9f8
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:27 . Memory (MB): peak = 1246.750 ; gain = 107.785
+Phase 5 Delay and Skew Optimization | Checksum: 1bd89f9f8
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:27 . Memory (MB): peak = 1246.750 ; gain = 107.785
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 177e5b188
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:27 . Memory (MB): peak = 1246.750 ; gain = 107.785
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-11.630| TNS=-32.579| WHS=-1.783 | THS=-9.968 |
+
+
+Phase 6.1.2 Lut RouteThru Assignment for hold
+Phase 6.1.2 Lut RouteThru Assignment for hold | Checksum: 12d6aafd8
+
+Time (s): cpu = 00:00:48 ; elapsed = 00:00:39 . Memory (MB): peak = 1534.547 ; gain = 395.582
+Phase 6.1 Hold Fix Iter | Checksum: 12d6aafd8
+
+Time (s): cpu = 00:00:48 ; elapsed = 00:00:39 . Memory (MB): peak = 1534.547 ; gain = 395.582
+
+Phase 6.2 Additional Hold Fix
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-11.615| TNS=-34.047| WHS=-3.506 | THS=-15.214|
+
+Phase 6.2 Additional Hold Fix | Checksum: 16e40928d
+
+Time (s): cpu = 00:00:55 ; elapsed = 00:00:45 . Memory (MB): peak = 1534.547 ; gain = 395.582
+Phase 6 Post Hold Fix | Checksum: 2126489e4
+
+Time (s): cpu = 00:00:55 ; elapsed = 00:00:45 . Memory (MB): peak = 1534.547 ; gain = 395.582
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.166688 %
+  Global Horizontal Routing Utilization  = 0.081131 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Utilization threshold used for congestion level computation: 0.85
+Congestion Report
+North Dir 1x1 Area, Max Cong = 36.9369%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 21.6216%, No Congested Regions.
+East Dir 1x1 Area, Max Cong = 20.5882%, No Congested Regions.
+West Dir 1x1 Area, Max Cong = 26.4706%, No Congested Regions.
+Phase 7 Route finalize | Checksum: 24d55fcfe
+
+Time (s): cpu = 00:00:56 ; elapsed = 00:00:45 . Memory (MB): peak = 1534.547 ; gain = 395.582
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 24d55fcfe
+
+Time (s): cpu = 00:00:56 ; elapsed = 00:00:45 . Memory (MB): peak = 1534.547 ; gain = 395.582
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: 1c900abdd
+
+Time (s): cpu = 00:00:56 ; elapsed = 00:00:45 . Memory (MB): peak = 1534.547 ; gain = 395.582
+
+Phase 10 Post Router Timing
+
+Phase 10.1 Update Timing
+Phase 10.1 Update Timing | Checksum: 139c2e79a
+
+Time (s): cpu = 00:00:56 ; elapsed = 00:00:45 . Memory (MB): peak = 1534.547 ; gain = 395.582
+INFO: [Route 35-57] Estimated Timing Summary | WNS=-11.615| TNS=-40.556| WHS=-5.422 | THS=-11.341|
+
+WARNING: [Route 35-328] Router estimated timing not met.
+Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.
+Phase 10 Post Router Timing | Checksum: 139c2e79a
+
+Time (s): cpu = 00:00:56 ; elapsed = 00:00:45 . Memory (MB): peak = 1534.547 ; gain = 395.582
+WARNING: [Route 35-455] Router was unable to fix hold violation on 6 pins because of high hold requirement. Such pins are:
+	controller/dataRxFifo/pWrite_counter/full_i_1/I1
+	controller/dataTxFifo/pRead_counter/status_reg_i_1/I1
+	controller/dataTxFifo/pRead_counter/status_reg_i_1/I0
+	controller/dataRxFifo/pWrite_counter/status_reg_i_1__0/I1
+	controller/OE_reg_i_2/I1
+	controller/dataTxFifo/pRead_counter/status_reg_i_2/I1
+
+Resolution: Run report_timing_summary to analyze the hold violations.
+WARNING: [Route 35-459] Router was unable to fix hold violation on 1 pins. This could be due to a combination of congestion, blockages and run-time limitations. Such pins are:
+	controller/dataRxFifo/pWrite_counter/status_reg_i_2__0/I1
+
+Resolution: You may try high effort hold fixing by turning on param route.enableGlobalHoldIter.
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:00:56 ; elapsed = 00:00:45 . Memory (MB): peak = 1534.547 ; gain = 395.582
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+68 Infos, 24 Warnings, 1 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:00:57 ; elapsed = 00:00:46 . Memory (MB): peak = 1534.547 ; gain = 395.582
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.053 . Memory (MB): peak = 1534.547 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.runs/impl_1/Scaler_Streamer_Top_Block_routed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file Scaler_Streamer_Top_Block_drc_routed.rpt -pb Scaler_Streamer_Top_Block_drc_routed.pb -rpx Scaler_Streamer_Top_Block_drc_routed.rpx
+Command: report_drc -file Scaler_Streamer_Top_Block_drc_routed.rpt -pb Scaler_Streamer_Top_Block_drc_routed.pb -rpx Scaler_Streamer_Top_Block_drc_routed.rpx
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.runs/impl_1/Scaler_Streamer_Top_Block_drc_routed.rpt.
+report_drc completed successfully
+INFO: [runtcl-4] Executing : report_methodology -file Scaler_Streamer_Top_Block_methodology_drc_routed.rpt -pb Scaler_Streamer_Top_Block_methodology_drc_routed.pb -rpx Scaler_Streamer_Top_Block_methodology_drc_routed.rpx
+Command: report_methodology -file Scaler_Streamer_Top_Block_methodology_drc_routed.rpt -pb Scaler_Streamer_Top_Block_methodology_drc_routed.pb -rpx Scaler_Streamer_Top_Block_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+WARNING: [Timing 38-172] LUT was found on clock network. Both rising/falling clock edges are propagated from LUT output pin. Use set_clock_sense to specify if that clock should be inverted or not. e.g. set_clock_sense -positive/-negative controller/OE_reg_i_2/O
+WARNING: [Timing 38-172] LUT was found on clock network. Both rising/falling clock edges are propagated from LUT output pin. Use set_clock_sense to specify if that clock should be inverted or not. e.g. set_clock_sense -positive/-negative controller/RD_reg_i_2/O
+WARNING: [Timing 38-172] LUT was found on clock network. Both rising/falling clock edges are propagated from LUT output pin. Use set_clock_sense to specify if that clock should be inverted or not. e.g. set_clock_sense -positive/-negative controller/WR_reg_i_2/O
+WARNING: [Timing 38-172] LUT was found on clock network. Both rising/falling clock edges are propagated from LUT output pin. Use set_clock_sense to specify if that clock should be inverted or not. e.g. set_clock_sense -positive/-negative controller/recvData_reg_i_2/O
+WARNING: [Timing 38-172] LUT was found on clock network. Both rising/falling clock edges are propagated from LUT output pin. Use set_clock_sense to specify if that clock should be inverted or not. e.g. set_clock_sense -positive/-negative controller/sendData_reg_i_2/O
+INFO: [DRC 23-133] Running Methodology with 2 threads
+INFO: [Coretcl 2-1520] The results of Report Methodology are in file C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.runs/impl_1/Scaler_Streamer_Top_Block_methodology_drc_routed.rpt.
+report_methodology completed successfully
+INFO: [runtcl-4] Executing : report_power -file Scaler_Streamer_Top_Block_power_routed.rpt -pb Scaler_Streamer_Top_Block_power_summary_routed.pb -rpx Scaler_Streamer_Top_Block_power_routed.rpx
+Command: report_power -file Scaler_Streamer_Top_Block_power_routed.rpt -pb Scaler_Streamer_Top_Block_power_summary_routed.pb -rpx Scaler_Streamer_Top_Block_power_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+79 Infos, 29 Warnings, 1 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+INFO: [runtcl-4] Executing : report_route_status -file Scaler_Streamer_Top_Block_route_status.rpt -pb Scaler_Streamer_Top_Block_route_status.pb
+INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -file Scaler_Streamer_Top_Block_timing_summary_routed.rpt -warn_on_violation  -rpx Scaler_Streamer_Top_Block_timing_summary_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+INFO: [runtcl-4] Executing : report_incremental_reuse -file Scaler_Streamer_Top_Block_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-545] No incremental reuse to report, no incremental placement and routing data was found.
+INFO: [runtcl-4] Executing : report_clock_utilization -file Scaler_Streamer_Top_Block_clock_utilization_routed.rpt
+INFO: [Common 17-206] Exiting Vivado at Fri Feb  9 18:02:55 2018...
