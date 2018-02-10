@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.3 (win64) Build 2018833 Wed Oct  4 19:58:22 MDT 2017
-| Date             : Fri Feb  9 16:20:33 2018
+| Date             : Fri Feb  9 18:02:54 2018
 | Host             : Gogol-Laptop running 64-bit major release  (build 9200)
 | Command          : report_power -file Scaler_Streamer_Top_Block_power_routed.rpt -pb Scaler_Streamer_Top_Block_power_summary_routed.pb -rpx Scaler_Streamer_Top_Block_power_routed.rpx
 | Design           : Scaler_Streamer_Top_Block
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.134        |
+| Total On-Chip Power (W)  | 0.110        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.036        |
+| Dynamic (W)              | 0.013        |
 | Device Static (W)        | 0.097        |
 | Effective TJA (C/W)      | 4.6          |
-| Max Ambient (C)          | 84.4         |
-| Junction Temperature (C) | 25.6         |
+| Max Ambient (C)          | 84.5         |
+| Junction Temperature (C) | 25.5         |
 | Confidence Level         | Medium       |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -49,20 +49,20 @@ Table of Contents
 1.1 On-Chip Components
 ----------------------
 
-+--------------------------+-----------+----------+-----------+-----------------+
-| On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
-+--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.002 |       11 |       --- |             --- |
-| Slice Logic              |    <0.001 |      112 |       --- |             --- |
-|   LUT as Logic           |    <0.001 |       29 |     63400 |            0.05 |
-|   LUT as Distributed RAM |    <0.001 |        6 |     19000 |            0.03 |
-|   Register               |    <0.001 |       46 |    126800 |            0.04 |
-|   Others                 |     0.000 |       12 |       --- |             --- |
-| Signals                  |    <0.001 |       46 |       --- |             --- |
-| I/O                      |     0.033 |       14 |       210 |            6.67 |
-| Static Power             |     0.097 |          |           |                 |
-| Total                    |     0.134 |          |           |                 |
-+--------------------------+-----------+----------+-----------+-----------------+
++----------------+-----------+----------+-----------+-----------------+
+| On-Chip        | Power (W) | Used     | Available | Utilization (%) |
++----------------+-----------+----------+-----------+-----------------+
+| Clocks         |     0.005 |       11 |       --- |             --- |
+| Slice Logic    |    <0.001 |      105 |       --- |             --- |
+|   LUT as Logic |    <0.001 |       37 |     63400 |            0.06 |
+|   Register     |    <0.001 |       39 |    126800 |            0.03 |
+|   Others       |     0.000 |       12 |       --- |             --- |
+| Signals        |    <0.001 |       49 |       --- |             --- |
+| Block RAM      |    <0.001 |      0.5 |       135 |            0.37 |
+| I/O            |     0.007 |       14 |       210 |            6.67 |
+| Static Power   |     0.097 |          |           |                 |
+| Total          |     0.110 |          |           |                 |
++----------------+-----------+----------+-----------+-----------------+
 
 
 1.2 Power Supply Summary
@@ -71,9 +71,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.018 |       0.003 |      0.015 |
-| Vccaux    |       1.800 |     0.019 |       0.001 |      0.018 |
-| Vcco33    |       3.300 |     0.013 |       0.009 |      0.004 |
+| Vccint    |       1.000 |     0.021 |       0.006 |      0.015 |
+| Vccaux    |       1.800 |     0.018 |       0.000 |      0.018 |
+| Vcco33    |       3.300 |     0.006 |       0.002 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -124,18 +124,18 @@ Table of Contents
 2.2 Clock Constraints
 ---------------------
 
-+------------------------------------------------------+----------------------------------------------------------+-----------------+
-| Clock                                                | Domain                                                   | Constraint (ns) |
-+------------------------------------------------------+----------------------------------------------------------+-----------------+
-| controller/dataRxFifo/pWrite_counter/pNextToWrite[5] | controller/dataRxFifo/pWrite_counter/pNextToWrite[5]     |            16.7 |
-| controller/dataRxFifo/pWrite_counter/pNextToWrite[6] | controller/dataRxFifo/pWrite_counter/pNextToWrite[6]     |            16.7 |
-| controller/dataTxFifo/pRead_counter/pNextToRead[5]   | controller/dataTxFifo/pRead_counter/outputData_reg[3][5] |            16.7 |
-| controller/dataTxFifo/pRead_counter/pNextToRead[6]   | controller/dataTxFifo/pRead_counter/pNextToRead[6]       |            16.7 |
-| controller/state[0]                                  | controller/state[0]                                      |            16.7 |
-| controller/state[1]                                  | controller/state[1]                                      |            16.7 |
-| controller/state[2]                                  | controller/state[2]                                      |            16.7 |
-| ftdi_clk                                             | ftdi_clk                                                 |            16.7 |
-+------------------------------------------------------+----------------------------------------------------------+-----------------+
++------------------------------------------------------+------------------------------------------------------+-----------------+
+| Clock                                                | Domain                                               | Constraint (ns) |
++------------------------------------------------------+------------------------------------------------------+-----------------+
+| controller/dataRxFifo/pWrite_counter/pNextToWrite[5] | controller/dataRxFifo/pWrite_counter/pNextToWrite[5] |            16.7 |
+| controller/dataRxFifo/pWrite_counter/pNextToWrite[6] | controller/dataRxFifo/pWrite_counter/pNextToWrite[6] |            16.7 |
+| controller/dataTxFifo/pRead_counter/pNextToRead[5]   | controller/dataTxFifo/pRead_counter/pNextToRead[5]   |            16.7 |
+| controller/dataTxFifo/pRead_counter/pNextToRead[6]   | controller/dataTxFifo/pRead_counter/pNextToRead[6]   |            16.7 |
+| controller/state[0]                                  | controller/state[0]                                  |            16.7 |
+| controller/state[1]                                  | controller/state[1]                                  |            16.7 |
+| controller/state[2]                                  | controller/state[2]                                  |            16.7 |
+| ftdi_clk                                             | ftdi_clk                                             |            16.7 |
++------------------------------------------------------+------------------------------------------------------+-----------------+
 
 
 3. Detailed Reports
@@ -147,14 +147,12 @@ Table of Contents
 +---------------------------+-----------+
 | Name                      | Power (W) |
 +---------------------------+-----------+
-| Scaler_Streamer_Top_Block |     0.036 |
-|   controller              |     0.003 |
-|     dataRxFifo            |     0.001 |
+| Scaler_Streamer_Top_Block |     0.013 |
+|   controller              |     0.006 |
+|     dataRxFifo            |     0.002 |
 |       pWrite_counter      |    <0.001 |
-|     dataTxFifo            |    <0.001 |
-|       memory_reg_0_63_3_5 |    <0.001 |
-|       memory_reg_0_63_7_7 |    <0.001 |
-|       pRead_counter       |    <0.001 |
+|     dataTxFifo            |     0.002 |
+|       pRead_counter       |     0.001 |
 +---------------------------+-----------+
 
 

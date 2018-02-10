@@ -80,7 +80,7 @@ module Sync_245_Controller(
                             .empty(rxFIFOEmpty));
                             
      reg[3:0] state;
-     parameter IDLE=0, PRE_RD_START=1, RD_START=2, READ_DATA=3, RD_STOP=4, WR_START=5, WR_START_POST= 6, WRITE_DATA=7, WR_STOP=8, WR_POST_2=9;
+     parameter IDLE=0, PRE_RD_START=1, RD_START=2, READ_DATA=3, RD_STOP=4, WR_START=5, WR_START_POST= 6, WRITE_DATA=7, WR_STOP=8, WR_POST_2=9, WR_START_PRE=10;
      
      
      // State Actions
@@ -106,15 +106,19 @@ module Sync_245_Controller(
             
             WR_START: begin
                 OE <=1;
+                sendData <=1;
+            end
+            
+            WR_START_POST: begin
+                WR <=0;
             end
             
             WRITE_DATA: begin
-                WR <=0;
                 sendData <= 1;
             end
             
             WR_STOP: begin
-                sendData = 0;
+                sendData <= 0;
                 WR <=1;
             end
         
@@ -148,10 +152,10 @@ module Sync_245_Controller(
             end
             
             IDLE: begin
-                if(~RXF && ~rxFIFOFull) begin
+                if(~RXF & ~rxFIFOFull) begin
                    state = PRE_RD_START;
                  end
-                 else if(~TXE && ~txFIFOEmpty)begin
+                 else if(~TXE & ~txFIFOEmpty)begin
                     state = WR_START;
                  end
             end
@@ -177,12 +181,16 @@ module Sync_245_Controller(
                 state = IDLE;
             end
             
+            WR_START_PRE: begin
+                state = WR_START;
+            end
+            
             WR_START: begin
-                state = WRITE_DATA;
+                state = WR_START_POST;
             end
             
             WR_START_POST: begin
-                state = WR_POST_2;
+                state = WRITE_DATA;
             end
             
             WR_POST_2: begin

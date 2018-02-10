@@ -14,9 +14,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 7500 
+INFO: Helper process launched with PID 15216 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 357.613 ; gain = 96.238
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 356.801 ; gain = 95.316
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'Scaler_Streamer_Top_Block' [C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/sources_1/new/Scaler_Streamer_Top_Block.v:23]
 INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [c:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.v:71]
@@ -75,8 +75,11 @@ INFO: [Synth 8-638] synthesizing module 'Sync_245_Controller' [C:/Users/Gogol/De
 	Parameter READ_DATA bound to: 3 - type: integer 
 	Parameter RD_STOP bound to: 4 - type: integer 
 	Parameter WR_START bound to: 5 - type: integer 
-	Parameter WRITE_DATA bound to: 6 - type: integer 
-	Parameter WR_STOP bound to: 7 - type: integer 
+	Parameter WR_START_POST bound to: 6 - type: integer 
+	Parameter WRITE_DATA bound to: 7 - type: integer 
+	Parameter WR_STOP bound to: 8 - type: integer 
+	Parameter WR_POST_2 bound to: 9 - type: integer 
+	Parameter WR_START_PRE bound to: 10 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'async_fifo' [C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/Loopback-FPGA/fpga_usb_sync_245.srcs/sources_1/new/async_fifo.v:29]
 	Parameter datawidth bound to: 8 - type: integer 
 	Parameter DATADEPTH bound to: 128 - type: integer 
@@ -85,14 +88,12 @@ INFO: [Synth 8-638] synthesizing module 'graycounter' [C:/Users/Gogol/Desktop/Cl
 	Parameter counterwidth bound to: 7 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'graycounter' (7#1) [C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/Loopback-FPGA/fpga_usb_sync_245.srcs/sources_1/new/graycounter.v:22]
 INFO: [Synth 8-256] done synthesizing module 'async_fifo' (8#1) [C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/Loopback-FPGA/fpga_usb_sync_245.srcs/sources_1/new/async_fifo.v:29]
-INFO: [Synth 8-226] default block is never used [C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/sources_1/new/Sync_245_Controller.v:88]
-INFO: [Synth 8-226] default block is never used [C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/sources_1/new/Sync_245_Controller.v:145]
 INFO: [Synth 8-256] done synthesizing module 'Sync_245_Controller' (9#1) [C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/sources_1/new/Sync_245_Controller.v:23]
 WARNING: [Synth 8-350] instance 'controller' of module 'Sync_245_Controller' requires 14 connections, but only 7 given [C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/sources_1/new/Scaler_Streamer_Top_Block.v:55]
 WARNING: [Synth 8-3848] Net global_rst in module/entity Scaler_Streamer_Top_Block does not have driver. [C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/sources_1/new/Scaler_Streamer_Top_Block.v:39]
 INFO: [Synth 8-256] done synthesizing module 'Scaler_Streamer_Top_Block' (10#1) [C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/sources_1/new/Scaler_Streamer_Top_Block.v:23]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 399.070 ; gain = 137.695
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 398.883 ; gain = 137.398
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -117,7 +118,7 @@ WARNING: [Synth 8-3295] tying undriven pin controller:outputClock to constant 0 
 WARNING: [Synth 8-3295] tying undriven pin controller:readData to constant 0 [C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/sources_1/new/Scaler_Streamer_Top_Block.v:55]
 WARNING: [Synth 8-3295] tying undriven pin controller:reset to constant 0 [C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/sources_1/new/Scaler_Streamer_Top_Block.v:55]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 399.070 ; gain = 137.695
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 398.883 ; gain = 137.398
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -148,16 +149,16 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 717.566 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 723.137 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 717.566 ; gain = 456.191
+Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 723.137 ; gain = 461.652
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 717.566 ; gain = 456.191
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 723.137 ; gain = 461.652
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -165,18 +166,18 @@ Start Applying 'set_property' XDC Constraints
 Applied set_property DONT_TOUCH = true for clkDiv/inst. (constraint file  C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.runs/synth_1/dont_touch.xdc, line 10).
 Applied set_property DONT_TOUCH = true for clkDiv. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 717.566 ; gain = 456.191
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 723.137 ; gain = 461.652
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-6014] Unused sequential element scaler_reg was removed.  [C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/sources_1/new/TempImgCreator.v:37]
 WARNING: [Synth 8-6014] Unused sequential element binary_count_reg was removed.  [C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/Loopback-FPGA/fpga_usb_sync_245.srcs/sources_1/new/graycounter.v:35]
 WARNING: [Synth 8-327] inferring latch for variable 'status_reg' [C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/Loopback-FPGA/fpga_usb_sync_245.srcs/sources_1/new/async_fifo.v:98]
-WARNING: [Synth 8-327] inferring latch for variable 'WR_reg' [C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/sources_1/new/Sync_245_Controller.v:112]
+WARNING: [Synth 8-327] inferring latch for variable 'WR_reg' [C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/sources_1/new/Sync_245_Controller.v:113]
 WARNING: [Synth 8-327] inferring latch for variable 'RD_reg' [C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/sources_1/new/Sync_245_Controller.v:94]
 WARNING: [Synth 8-327] inferring latch for variable 'OE_reg' [C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/sources_1/new/Sync_245_Controller.v:90]
 WARNING: [Synth 8-327] inferring latch for variable 'sendData_reg' [C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/sources_1/new/Sync_245_Controller.v:67]
 WARNING: [Synth 8-327] inferring latch for variable 'recvData_reg' [C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/sources_1/new/Sync_245_Controller.v:74]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 717.566 ; gain = 456.191
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 723.137 ; gain = 461.652
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -196,14 +197,14 @@ Detailed RTL Component Info :
 	   2 Input      1 Bit         XORs := 8     
 +---Registers : 
 	                8 Bit    Registers := 4     
-	                7 Bit    Registers := 8     
-	                1 Bit    Registers := 4     
+	                7 Bit    Registers := 4     
 +---RAMs : 
 	             1024 Bit         RAMs := 2     
 +---Muxes : 
+	   2 Input      4 Bit        Muxes := 2     
+	   3 Input      3 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 1     
-	  12 Input      3 Bit        Muxes := 1     
-	   8 Input      1 Bit        Muxes := 9     
+	  10 Input      1 Bit        Muxes := 10    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -224,22 +225,22 @@ Detailed RTL Component Info :
 +---XORs : 
 	   2 Input      6 Bit         XORs := 1     
 +---Registers : 
-	                7 Bit    Registers := 2     
+	                7 Bit    Registers := 1     
 Module async_fifo 
 Detailed RTL Component Info : 
 +---XORs : 
 	   2 Input      1 Bit         XORs := 4     
 +---Registers : 
 	                8 Bit    Registers := 1     
-	                1 Bit    Registers := 2     
 +---RAMs : 
 	             1024 Bit         RAMs := 1     
 Module Sync_245_Controller 
 Detailed RTL Component Info : 
 +---Muxes : 
+	   2 Input      4 Bit        Muxes := 2     
+	   3 Input      3 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 1     
-	  12 Input      3 Bit        Muxes := 1     
-	   8 Input      1 Bit        Muxes := 9     
+	  10 Input      1 Bit        Muxes := 10    
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -265,13 +266,13 @@ INFO: [Synth 8-5784] Optimized 0 bits of RAM "controller/dataTxFifo/memory_reg" 
 WARNING: [Synth 8-6014] Unused sequential element controller/dataRxFifo/outputData_reg was removed.  [C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/Loopback-FPGA/fpga_usb_sync_245.srcs/sources_1/new/async_fifo.v:60]
 WARNING: [Synth 8-6014] Unused sequential element controller/dataRxFifo/memory_reg was removed. 
 WARNING: [Synth 8-5730] RAM controller/dataRxFifo/memory_reg got removed due to cross hierarchy optimization. 
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\controller/dataRxFifo/pRead_counter/binary_count0_inferred /\controller/dataRxFifo/pRead_counter/binary_count_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller/dataRxFifo/pRead_counter/binary_count0_inferred /\controller/dataRxFifo/pRead_counter/binary_count_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller/dataRxFifo/pRead_counter/binary_count0_inferred /\controller/dataRxFifo/pRead_counter/binary_count_reg[2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller/dataRxFifo/pRead_counter/binary_count0_inferred /\controller/dataRxFifo/pRead_counter/binary_count_reg[3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller/dataRxFifo/pRead_counter/binary_count0_inferred /\controller/dataRxFifo/pRead_counter/binary_count_reg[4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller/dataRxFifo/pRead_counter/binary_count0_inferred /\controller/dataRxFifo/pRead_counter/binary_count_reg[5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller/dataRxFifo/pRead_counter/binary_count0_inferred /\controller/dataRxFifo/pRead_counter/binary_count_reg[6] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\controller/dataRxFifo/pRead_counter/binary_count_reg_inferred /\controller/dataRxFifo/pRead_counter/binary_count_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller/dataRxFifo/pRead_counter/binary_count_reg_inferred /\controller/dataRxFifo/pRead_counter/binary_count_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller/dataRxFifo/pRead_counter/binary_count_reg_inferred /\controller/dataRxFifo/pRead_counter/binary_count_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller/dataRxFifo/pRead_counter/binary_count_reg_inferred /\controller/dataRxFifo/pRead_counter/binary_count_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller/dataRxFifo/pRead_counter/binary_count_reg_inferred /\controller/dataRxFifo/pRead_counter/binary_count_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller/dataRxFifo/pRead_counter/binary_count_reg_inferred /\controller/dataRxFifo/pRead_counter/binary_count_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller/dataRxFifo/pRead_counter/binary_count_reg_inferred /\controller/dataRxFifo/pRead_counter/binary_count_reg[6] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller/dataRxFifo/pRead_counter/graycount_reg[6] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller/dataRxFifo/pRead_counter/graycount_reg[0] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller/dataRxFifo/pRead_counter/graycount_reg[1] )
@@ -279,13 +280,13 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controll
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller/dataRxFifo/pRead_counter/graycount_reg[3] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller/dataRxFifo/pRead_counter/graycount_reg[4] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller/dataRxFifo/pRead_counter/graycount_reg[5] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\controller/dataTxFifo/pWrite_counter/binary_count0_inferred /\controller/dataTxFifo/pWrite_counter/binary_count_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller/dataTxFifo/pWrite_counter/binary_count0_inferred /\controller/dataTxFifo/pWrite_counter/binary_count_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller/dataTxFifo/pWrite_counter/binary_count0_inferred /\controller/dataTxFifo/pWrite_counter/binary_count_reg[2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller/dataTxFifo/pWrite_counter/binary_count0_inferred /\controller/dataTxFifo/pWrite_counter/binary_count_reg[3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller/dataTxFifo/pWrite_counter/binary_count0_inferred /\controller/dataTxFifo/pWrite_counter/binary_count_reg[4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller/dataTxFifo/pWrite_counter/binary_count0_inferred /\controller/dataTxFifo/pWrite_counter/binary_count_reg[5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller/dataTxFifo/pWrite_counter/binary_count0_inferred /\controller/dataTxFifo/pWrite_counter/binary_count_reg[6] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\controller/dataTxFifo/pWrite_counter/binary_count_reg_inferred /\controller/dataTxFifo/pWrite_counter/binary_count_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller/dataTxFifo/pWrite_counter/binary_count_reg_inferred /\controller/dataTxFifo/pWrite_counter/binary_count_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller/dataTxFifo/pWrite_counter/binary_count_reg_inferred /\controller/dataTxFifo/pWrite_counter/binary_count_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller/dataTxFifo/pWrite_counter/binary_count_reg_inferred /\controller/dataTxFifo/pWrite_counter/binary_count_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller/dataTxFifo/pWrite_counter/binary_count_reg_inferred /\controller/dataTxFifo/pWrite_counter/binary_count_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller/dataTxFifo/pWrite_counter/binary_count_reg_inferred /\controller/dataTxFifo/pWrite_counter/binary_count_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller/dataTxFifo/pWrite_counter/binary_count_reg_inferred /\controller/dataTxFifo/pWrite_counter/binary_count_reg[6] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller/dataTxFifo/pWrite_counter/graycount_reg[0] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller/dataTxFifo/pWrite_counter/graycount_reg[1] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller/dataTxFifo/pWrite_counter/graycount_reg[2] )
@@ -293,13 +294,6 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controll
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller/dataTxFifo/pWrite_counter/graycount_reg[4] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller/dataTxFifo/pWrite_counter/graycount_reg[5] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\controller/dataTxFifo/pWrite_counter/graycount_reg[6] )
-WARNING: [Synth 8-3332] Sequential element (controller/dataTxFifo/pWrite_counter/binary_count_reg[6]) is unused and will be removed from module Scaler_Streamer_Top_Block.
-WARNING: [Synth 8-3332] Sequential element (controller/dataTxFifo/pWrite_counter/binary_count_reg[5]) is unused and will be removed from module Scaler_Streamer_Top_Block.
-WARNING: [Synth 8-3332] Sequential element (controller/dataTxFifo/pWrite_counter/binary_count_reg[4]) is unused and will be removed from module Scaler_Streamer_Top_Block.
-WARNING: [Synth 8-3332] Sequential element (controller/dataTxFifo/pWrite_counter/binary_count_reg[3]) is unused and will be removed from module Scaler_Streamer_Top_Block.
-WARNING: [Synth 8-3332] Sequential element (controller/dataTxFifo/pWrite_counter/binary_count_reg[2]) is unused and will be removed from module Scaler_Streamer_Top_Block.
-WARNING: [Synth 8-3332] Sequential element (controller/dataTxFifo/pWrite_counter/binary_count_reg[1]) is unused and will be removed from module Scaler_Streamer_Top_Block.
-WARNING: [Synth 8-3332] Sequential element (controller/dataTxFifo/pWrite_counter/binary_count_reg[0]) is unused and will be removed from module Scaler_Streamer_Top_Block.
 WARNING: [Synth 8-3332] Sequential element (controller/dataTxFifo/pWrite_counter/graycount_reg[6]) is unused and will be removed from module Scaler_Streamer_Top_Block.
 WARNING: [Synth 8-3332] Sequential element (controller/dataTxFifo/pWrite_counter/graycount_reg[5]) is unused and will be removed from module Scaler_Streamer_Top_Block.
 WARNING: [Synth 8-3332] Sequential element (controller/dataTxFifo/pWrite_counter/graycount_reg[4]) is unused and will be removed from module Scaler_Streamer_Top_Block.
@@ -307,13 +301,6 @@ WARNING: [Synth 8-3332] Sequential element (controller/dataTxFifo/pWrite_counter
 WARNING: [Synth 8-3332] Sequential element (controller/dataTxFifo/pWrite_counter/graycount_reg[2]) is unused and will be removed from module Scaler_Streamer_Top_Block.
 WARNING: [Synth 8-3332] Sequential element (controller/dataTxFifo/pWrite_counter/graycount_reg[1]) is unused and will be removed from module Scaler_Streamer_Top_Block.
 WARNING: [Synth 8-3332] Sequential element (controller/dataTxFifo/pWrite_counter/graycount_reg[0]) is unused and will be removed from module Scaler_Streamer_Top_Block.
-WARNING: [Synth 8-3332] Sequential element (controller/dataRxFifo/pRead_counter/binary_count_reg[6]) is unused and will be removed from module Scaler_Streamer_Top_Block.
-WARNING: [Synth 8-3332] Sequential element (controller/dataRxFifo/pRead_counter/binary_count_reg[5]) is unused and will be removed from module Scaler_Streamer_Top_Block.
-WARNING: [Synth 8-3332] Sequential element (controller/dataRxFifo/pRead_counter/binary_count_reg[4]) is unused and will be removed from module Scaler_Streamer_Top_Block.
-WARNING: [Synth 8-3332] Sequential element (controller/dataRxFifo/pRead_counter/binary_count_reg[3]) is unused and will be removed from module Scaler_Streamer_Top_Block.
-WARNING: [Synth 8-3332] Sequential element (controller/dataRxFifo/pRead_counter/binary_count_reg[2]) is unused and will be removed from module Scaler_Streamer_Top_Block.
-WARNING: [Synth 8-3332] Sequential element (controller/dataRxFifo/pRead_counter/binary_count_reg[1]) is unused and will be removed from module Scaler_Streamer_Top_Block.
-WARNING: [Synth 8-3332] Sequential element (controller/dataRxFifo/pRead_counter/binary_count_reg[0]) is unused and will be removed from module Scaler_Streamer_Top_Block.
 WARNING: [Synth 8-3332] Sequential element (controller/dataRxFifo/pRead_counter/graycount_reg[6]) is unused and will be removed from module Scaler_Streamer_Top_Block.
 WARNING: [Synth 8-3332] Sequential element (controller/dataRxFifo/pRead_counter/graycount_reg[5]) is unused and will be removed from module Scaler_Streamer_Top_Block.
 WARNING: [Synth 8-3332] Sequential element (controller/dataRxFifo/pRead_counter/graycount_reg[4]) is unused and will be removed from module Scaler_Streamer_Top_Block.
@@ -322,9 +309,22 @@ WARNING: [Synth 8-3332] Sequential element (controller/dataRxFifo/pRead_counter/
 WARNING: [Synth 8-3332] Sequential element (controller/dataRxFifo/pRead_counter/graycount_reg[1]) is unused and will be removed from module Scaler_Streamer_Top_Block.
 WARNING: [Synth 8-3332] Sequential element (controller/dataRxFifo/pRead_counter/graycount_reg[0]) is unused and will be removed from module Scaler_Streamer_Top_Block.
 WARNING: [Synth 8-3332] Sequential element (controller/dataRxFifo/empty_reg) is unused and will be removed from module Scaler_Streamer_Top_Block.
-WARNING: [Synth 8-3332] Sequential element (controller/dataTxFifo/full_reg) is unused and will be removed from module Scaler_Streamer_Top_Block.
+WARNING: [Synth 8-3332] Sequential element (controller/dataTxFifo/pWrite_counter/binary_count_reg[6]) is unused and will be removed from module Scaler_Streamer_Top_Block.
+WARNING: [Synth 8-3332] Sequential element (controller/dataTxFifo/pWrite_counter/binary_count_reg[5]) is unused and will be removed from module Scaler_Streamer_Top_Block.
+WARNING: [Synth 8-3332] Sequential element (controller/dataTxFifo/pWrite_counter/binary_count_reg[4]) is unused and will be removed from module Scaler_Streamer_Top_Block.
+WARNING: [Synth 8-3332] Sequential element (controller/dataTxFifo/pWrite_counter/binary_count_reg[3]) is unused and will be removed from module Scaler_Streamer_Top_Block.
+WARNING: [Synth 8-3332] Sequential element (controller/dataTxFifo/pWrite_counter/binary_count_reg[2]) is unused and will be removed from module Scaler_Streamer_Top_Block.
+WARNING: [Synth 8-3332] Sequential element (controller/dataTxFifo/pWrite_counter/binary_count_reg[1]) is unused and will be removed from module Scaler_Streamer_Top_Block.
+WARNING: [Synth 8-3332] Sequential element (controller/dataTxFifo/pWrite_counter/binary_count_reg[0]) is unused and will be removed from module Scaler_Streamer_Top_Block.
+WARNING: [Synth 8-3332] Sequential element (controller/dataRxFifo/pRead_counter/binary_count_reg[6]) is unused and will be removed from module Scaler_Streamer_Top_Block.
+WARNING: [Synth 8-3332] Sequential element (controller/dataRxFifo/pRead_counter/binary_count_reg[5]) is unused and will be removed from module Scaler_Streamer_Top_Block.
+WARNING: [Synth 8-3332] Sequential element (controller/dataRxFifo/pRead_counter/binary_count_reg[4]) is unused and will be removed from module Scaler_Streamer_Top_Block.
+WARNING: [Synth 8-3332] Sequential element (controller/dataRxFifo/pRead_counter/binary_count_reg[3]) is unused and will be removed from module Scaler_Streamer_Top_Block.
+WARNING: [Synth 8-3332] Sequential element (controller/dataRxFifo/pRead_counter/binary_count_reg[2]) is unused and will be removed from module Scaler_Streamer_Top_Block.
+WARNING: [Synth 8-3332] Sequential element (controller/dataRxFifo/pRead_counter/binary_count_reg[1]) is unused and will be removed from module Scaler_Streamer_Top_Block.
+WARNING: [Synth 8-3332] Sequential element (controller/dataRxFifo/pRead_counter/binary_count_reg[0]) is unused and will be removed from module Scaler_Streamer_Top_Block.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 717.566 ; gain = 456.191
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 723.137 ; gain = 461.652
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -351,26 +351,25 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 717.566 ; gain = 456.191
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 723.137 ; gain = 461.652
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5584] The signal controller/dataTxFifo/memory_reg is implemented as distributed LUT RAM for the following reason(s): The timing constraints suggest that the chosen mapping will yield better timing results.
-INFO: [Synth 8-5584] The signal controller/dataTxFifo/memory_reg is implemented as distributed LUT RAM for the following reason(s): The timing constraints suggest that the chosen mapping will yield better timing results.
-INFO: [Synth 8-3886] merging instance 'i_0/controller/dataTxFifo/outputData_reg[0]' (FDE) to 'i_0/controller/dataTxFifo/outputData_reg[3]'
-INFO: [Synth 8-3886] merging instance 'i_0/controller/dataTxFifo/outputData_reg[1]' (FDE) to 'i_0/controller/dataTxFifo/outputData_reg[4]'
-INFO: [Synth 8-3886] merging instance 'i_0/controller/dataTxFifo/outputData_reg[2]' (FDE) to 'i_0/controller/dataTxFifo/outputData_reg[5]'
-INFO: [Synth 8-3886] merging instance 'i_0/controller/dataTxFifo/outputData_reg[6]' (FDE) to 'i_0/controller/dataTxFifo/outputData_reg[7]'
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 717.566 ; gain = 456.191
+Finished Timing Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 723.137 ; gain = 461.652
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
-Distributed RAM: Final Mapping  Report
--------NONE-------
+Block RAM: Final Mapping  Report
++------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|async_fifo: | memory_reg | 128 x 8(NO_CHANGE)     | W |   | 128 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
++------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
@@ -383,10 +382,12 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3886] merging instance 'controller/dataRxFifo/pWrite_counter/binary_count_reg[1]' (FDRE) to 'controller/dataRxFifo/pWrite_counter/graycount_reg[0]'
-INFO: [Synth 8-3886] merging instance 'controller/dataTxFifo/pRead_counter/binary_count_reg[1]' (FDRE) to 'controller/dataTxFifo/pRead_counter/graycount_reg[0]'
+WARNING: [Synth 8-3332] Sequential element (controller/dataTxFifo/full_reg) is unused and will be removed from module Scaler_Streamer_Top_Block.
+INFO: [Synth 8-3886] merging instance 'controller/dataRxFifo/pWrite_counter/binary_count_reg[1]' (FDRE_1) to 'controller/dataRxFifo/pWrite_counter/graycount_reg[0]'
+INFO: [Synth 8-3886] merging instance 'controller/dataTxFifo/pRead_counter/binary_count_reg[1]' (FDRE_1) to 'controller/dataTxFifo/pRead_counter/graycount_reg[0]'
+INFO: [Synth 8-4480] The timing for the instance controller/dataTxFifo/memory_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 717.566 ; gain = 456.191
+Finished Technology Mapping : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 723.137 ; gain = 461.652
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -411,7 +412,7 @@ Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-3295] tying undriven pin clkDiv:reset to constant 0
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 717.566 ; gain = 456.191
+Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 723.137 ; gain = 461.652
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -424,7 +425,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 717.566 ; gain = 456.191
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 723.137 ; gain = 461.652
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -436,25 +437,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 717.566 ; gain = 456.191
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 723.137 ; gain = 461.652
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 717.566 ; gain = 456.191
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 723.137 ; gain = 461.652
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 717.566 ; gain = 456.191
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 723.137 ; gain = 461.652
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 717.566 ; gain = 456.191
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 723.137 ; gain = 461.652
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -472,59 +473,54 @@ Report Cell Usage:
 +------+----------+------+
 |1     |BUFG      |     4|
 |2     |LUT1      |     3|
-|3     |LUT2      |    19|
-|4     |LUT3      |    14|
-|5     |LUT4      |     2|
-|6     |LUT5      |     5|
-|7     |LUT6      |     6|
+|3     |LUT2      |    20|
+|4     |LUT3      |     9|
+|5     |LUT4      |    11|
+|6     |LUT5      |     4|
+|7     |LUT6      |     8|
 |8     |PLLE2_ADV |     1|
-|9     |RAM64M    |     1|
-|10    |RAM64X1D  |     1|
-|11    |FDPE      |     2|
-|12    |FDRE      |    33|
-|13    |LD        |     5|
-|14    |LDC       |     2|
-|15    |IBUF      |     4|
-|16    |OBUF      |    11|
+|9     |RAMB18E1  |     1|
+|10    |FDRE      |    32|
+|11    |LD        |     5|
+|12    |LDC       |     2|
+|13    |IBUF      |     4|
+|14    |OBUF      |    11|
 +------+----------+------+
 
 Report Instance Areas: 
 +------+---------------------+--------------------+------+
 |      |Instance             |Module              |Cells |
 +------+---------------------+--------------------+------+
-|1     |top                  |                    |   113|
+|1     |top                  |                    |   115|
 |2     |  clkDiv             |clk_wiz_0           |     5|
 |3     |    inst             |clk_wiz_0_clk_wiz   |     5|
-|4     |  controller         |Sync_245_Controller |    93|
-|5     |    dataRxFifo       |async_fifo          |    35|
+|4     |  controller         |Sync_245_Controller |    94|
+|5     |    dataRxFifo       |async_fifo          |    37|
 |6     |      pWrite_counter |graycounter_1       |    31|
-|7     |    dataTxFifo       |async_fifo_0        |    41|
+|7     |    dataTxFifo       |async_fifo_0        |    38|
 |8     |      pRead_counter  |graycounter         |    31|
 +------+---------------------+--------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 717.566 ; gain = 456.191
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 723.137 ; gain = 461.652
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 48 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:25 . Memory (MB): peak = 717.566 ; gain = 137.695
-Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 717.566 ; gain = 456.191
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:24 . Memory (MB): peak = 723.137 ; gain = 137.398
+Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 723.137 ; gain = 461.652
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 14 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 13 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 1 inverter(s) to 1 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 9 instances were transformed.
-  LD => LDCE: 4 instances
-  LD => LDCE (inverted pins: G): 1 instances
+  A total of 7 instances were transformed.
+  LD => LDCE: 5 instances
   LDC => LDCE: 2 instances
-  RAM64M => RAM64M (RAMD64E, RAMD64E, RAMD64E, RAMD64E): 1 instances
-  RAM64X1D => RAM64X1D (RAMD64E, RAMD64E): 1 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-76 Infos, 66 Warnings, 1 Critical Warnings and 0 Errors encountered.
+69 Infos, 66 Warnings, 1 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 717.566 ; gain = 464.652
+synth_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 723.137 ; gain = 470.738
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.runs/synth_1/Scaler_Streamer_Top_Block.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Scaler_Streamer_Top_Block_utilization_synth.rpt -pb Scaler_Streamer_Top_Block_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 717.566 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Fri Feb  9 16:19:22 2018...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 723.137 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Fri Feb  9 18:01:24 2018...

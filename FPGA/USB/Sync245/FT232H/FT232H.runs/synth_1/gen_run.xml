@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1518221919">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1518228044">
   <File Type="PA-TCL" Name="Scaler_Streamer_Top_Block.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="Scaler_Streamer_Top_Block_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="Scaler_Streamer_Top_Block_reports.tcl"/>
