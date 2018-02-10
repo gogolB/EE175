@@ -55,14 +55,14 @@ module async_fifo#(parameter datawidth = 8, parameter DATADEPTH = 128, parameter
     
     // Dual port ram logic
     // Reading
-    always @(posedge read_clk) begin
+    always @(negedge read_clk) begin
         if (read_en & !empty) begin
             outputData <= memory[pNextToRead];
         end
     end
     
     // Writing
-    always @(posedge write_clk) begin
+    always @(negedge write_clk) begin
         if (write_en & !full) begin
             memory[pNextToWrite] <= inputData;
         end
@@ -105,7 +105,7 @@ module async_fifo#(parameter datawidth = 8, parameter DATADEPTH = 128, parameter
     // Full logic for the input port
     assign presetFull = status & equalAddresses; // FIFO Full
     
-    always @(posedge write_clk, posedge presetFull) begin
+    always @(negedge write_clk, posedge presetFull) begin
         if(presetFull) begin
             full <= 1;
         end
@@ -117,7 +117,7 @@ module async_fifo#(parameter datawidth = 8, parameter DATADEPTH = 128, parameter
     // Empty logic for the output port.
     assign presetEmpty = ~status & equalAddresses; // FIFO Empty
     
-    always @(posedge read_clk, posedge presetEmpty) begin
+    always @(negedge read_clk, posedge presetEmpty) begin
         if (presetEmpty) begin
             empty <= 1;
         end

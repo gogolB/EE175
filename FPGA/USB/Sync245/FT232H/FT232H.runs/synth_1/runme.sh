@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log Sync_245_Controller.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Sync_245_Controller.tcl
+EAStep vivado -log Scaler_Streamer_Top_Block.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Scaler_Streamer_Top_Block.tcl

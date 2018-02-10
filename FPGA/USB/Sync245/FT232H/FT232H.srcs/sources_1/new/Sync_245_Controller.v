@@ -79,8 +79,8 @@ module Sync_245_Controller(
                             .full(rxFIFOFull),
                             .empty(rxFIFOEmpty));
                             
-     reg[2:0] state;
-     parameter IDLE=0, PRE_RD_START=1, RD_START=2, READ_DATA=3, RD_STOP=4, WR_START=5, WRITE_DATA=6, WR_STOP=7;
+     reg[3:0] state;
+     parameter IDLE=0, PRE_RD_START=1, RD_START=2, READ_DATA=3, RD_STOP=4, WR_START=5, WR_START_POST= 6, WRITE_DATA=7, WR_STOP=8, WR_POST_2=9;
      
      
      // State Actions
@@ -178,6 +178,14 @@ module Sync_245_Controller(
             end
             
             WR_START: begin
+                state = WRITE_DATA;
+            end
+            
+            WR_START_POST: begin
+                state = WR_POST_2;
+            end
+            
+            WR_POST_2: begin
                 state = WRITE_DATA;
             end
             

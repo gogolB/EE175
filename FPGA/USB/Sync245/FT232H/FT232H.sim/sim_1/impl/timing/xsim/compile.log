@@ -1,0 +1,21 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.sim/sim_1/impl/timing/xsim/Sync_245_Test_Bench_time_impl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RAM64M_UNIQ_BASE_
+INFO: [VRFC 10-311] analyzing module RAM64X1D_UNIQ_BASE_
+INFO: [VRFC 10-311] analyzing module Scaler_Streamer_Top_Block
+INFO: [VRFC 10-311] analyzing module Sync_245_Controller
+INFO: [VRFC 10-311] analyzing module async_fifo
+INFO: [VRFC 10-311] analyzing module async_fifo_0
+INFO: [VRFC 10-311] analyzing module graycounter
+INFO: [VRFC 10-311] analyzing module graycounter_1
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/sources_1/new/Sync_245_Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Sync_245_Controller
+WARNING: [VRFC 10-1195] overwriting previous definition of module Sync_245_Controller [C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/sources_1/new/Sync_245_Controller.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/Loopback-FPGA/fpga_usb_sync_245.srcs/sources_1/new/async_fifo.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module async_fifo
+WARNING: [VRFC 10-1195] overwriting previous definition of module async_fifo [C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/Loopback-FPGA/fpga_usb_sync_245.srcs/sources_1/new/async_fifo.v:29]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/Loopback-FPGA/fpga_usb_sync_245.srcs/sources_1/new/graycounter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module graycounter
+WARNING: [VRFC 10-1195] overwriting previous definition of module graycounter [C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/Loopback-FPGA/fpga_usb_sync_245.srcs/sources_1/new/graycounter.v:22]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/sim_1/new/Sync_245_Test_Bench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Sync_245_Test_Bench

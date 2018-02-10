@@ -42,6 +42,6 @@ EAStep()
 
 # pre-commands:
 /bin/touch .init_design.begin.rst
-EAStep vivado -log Sync_245_Controller.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source Sync_245_Controller.tcl -notrace
+EAStep vivado -log Scaler_Streamer_Top_Block.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source Scaler_Streamer_Top_Block.tcl -notrace
 
 

@@ -1,0 +1,9 @@
+0.6
+2017.3
+Oct  4 2017
+20:11:37
+C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.sim/sim_1/impl/func/xsim/Sync_245_Test_Bench_func_impl.v,1518221497,verilog,,C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/sources_1/new/Sync_245_Controller.v,,Scaler_Streamer_Top_Block;async_fifo_0;glbl;graycounter_1,,,../../../../../FT232H.srcs/sources_1/ip/clk_wiz_0,,,,,
+C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/sim_1/new/Sync_245_Test_Bench.v,1518170659,verilog,,,,Sync_245_Test_Bench,,,../../../../../FT232H.srcs/sources_1/ip/clk_wiz_0,,,,,
+C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/sources_1/new/Sync_245_Controller.v,1518165788,verilog,,C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/Loopback-FPGA/fpga_usb_sync_245.srcs/sources_1/new/async_fifo.v,,Sync_245_Controller,,,../../../../../FT232H.srcs/sources_1/ip/clk_wiz_0,,,,,
+C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/Loopback-FPGA/fpga_usb_sync_245.srcs/sources_1/new/async_fifo.v,1518170528,verilog,,C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/Loopback-FPGA/fpga_usb_sync_245.srcs/sources_1/new/graycounter.v,,async_fifo,,,../../../../../FT232H.srcs/sources_1/ip/clk_wiz_0,,,,,
+C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/Loopback-FPGA/fpga_usb_sync_245.srcs/sources_1/new/graycounter.v,1515785516,verilog,,C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/sim_1/new/Sync_245_Test_Bench.v,,graycounter,,,../../../../../FT232H.srcs/sources_1/ip/clk_wiz_0,,,,,

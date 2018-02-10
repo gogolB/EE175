@@ -30,7 +30,7 @@ module graycounter#(parameter counterwidth = 8)(
     
     reg [counterwidth - 1:0] binary_count;
     
-    always @(posedge clk) begin
+    always @(negedge clk) begin
         if (clear) begin
             binary_count <= {counterwidth{1'b0}} + 1;
             graycount <= {counterwidth{1'b0}};

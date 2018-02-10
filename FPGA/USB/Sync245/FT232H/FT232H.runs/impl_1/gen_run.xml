@@ -1,70 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1518165918">
-  <File Type="PWROPT-DCP" Name="Sync_245_Controller_pwropt.dcp"/>
-  <File Type="ROUTE-PWR" Name="Sync_245_Controller_power_routed.rpt"/>
-  <File Type="PA-TCL" Name="Sync_245_Controller.tcl"/>
-  <File Type="ROUTE-PWR-SUM" Name="Sync_245_Controller_power_summary_routed.pb"/>
-  <File Type="REPORTS-TCL" Name="Sync_245_Controller_reports.tcl"/>
-  <File Type="BG-DRC" Name="Sync_245_Controller.drc"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="Sync_245_Controller_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="Sync_245_Controller_timing_summary_init.rpt"/>
-  <File Type="OPT-HWDEF" Name="Sync_245_Controller.hwdef"/>
-  <File Type="OPT-DCP" Name="Sync_245_Controller_opt.dcp"/>
-  <File Type="OPT-DRC" Name="Sync_245_Controller_drc_opted.rpt"/>
-  <File Type="OPT-TIMING" Name="Sync_245_Controller_timing_summary_opted.rpt"/>
-  <File Type="PWROPT-DRC" Name="Sync_245_Controller_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="Sync_245_Controller_timing_summary_pwropted.rpt"/>
-  <File Type="PLACE-DCP" Name="Sync_245_Controller_placed.dcp"/>
-  <File Type="PLACE-IO" Name="Sync_245_Controller_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="Sync_245_Controller_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="Sync_245_Controller_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="Sync_245_Controller_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="Sync_245_Controller_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="Sync_245_Controller_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="Sync_245_Controller_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-TIMING" Name="Sync_245_Controller_timing_summary_placed.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="Sync_245_Controller_postplace_pwropt.dcp"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="Sync_245_Controller_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="Sync_245_Controller_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="Sync_245_Controller_drc_physopted.rpt"/>
-  <File Type="BG-BIT" Name="Sync_245_Controller.bit"/>
-  <File Type="PHYSOPT-TIMING" Name="Sync_245_Controller_timing_summary_physopted.rpt"/>
-  <File Type="ROUTE-ERROR-DCP" Name="Sync_245_Controller_routed_error.dcp"/>
-  <File Type="ROUTE-DCP" Name="Sync_245_Controller_routed.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="Sync_245_Controller_routed_bb.dcp"/>
-  <File Type="ROUTE-DRC" Name="Sync_245_Controller_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="Sync_245_Controller_drc_routed.pb"/>
-  <File Type="BITSTR-MSK" Name="Sync_245_Controller.msk"/>
-  <File Type="ROUTE-DRC-RPX" Name="Sync_245_Controller_drc_routed.rpx"/>
-  <File Type="BG-BGN" Name="Sync_245_Controller.bgn"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="Sync_245_Controller_methodology_drc_routed.rpt"/>
-  <File Type="BITSTR-RBT" Name="Sync_245_Controller.rbt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="Sync_245_Controller_methodology_drc_routed.rpx"/>
-  <File Type="BG-BIN" Name="Sync_245_Controller.bin"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="Sync_245_Controller_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-PWR-RPX" Name="Sync_245_Controller_power_routed.rpx"/>
-  <File Type="ROUTE-STATUS" Name="Sync_245_Controller_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="Sync_245_Controller_route_status.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="Sync_245_Controller_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-PB" Name="Sync_245_Controller_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="Sync_245_Controller_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="Sync_245_Controller_incremental_reuse_routed.rpt"/>
-  <File Type="RDI-RDI" Name="Sync_245_Controller.vdi"/>
-  <File Type="ROUTE-CLK" Name="Sync_245_Controller_clock_utilization_routed.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="Sync_245_Controller_postroute_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="Sync_245_Controller_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="Sync_245_Controller_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="Sync_245_Controller_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="Sync_245_Controller_timing_summary_postroute_physopted.rpx"/>
-  <File Type="BITSTR-NKY" Name="Sync_245_Controller.nky"/>
-  <File Type="BITSTR-BMM" Name="Sync_245_Controller_bd.bmm"/>
-  <File Type="BITSTR-MMI" Name="Sync_245_Controller.mmi"/>
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1518221919">
+  <File Type="PWROPT-DCP" Name="Scaler_Streamer_Top_Block_pwropt.dcp"/>
+  <File Type="ROUTE-PWR" Name="Scaler_Streamer_Top_Block_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="Scaler_Streamer_Top_Block.tcl"/>
+  <File Type="ROUTE-PWR-SUM" Name="Scaler_Streamer_Top_Block_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="Scaler_Streamer_Top_Block_reports.tcl"/>
+  <File Type="BG-DRC" Name="Scaler_Streamer_Top_Block.drc"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="Scaler_Streamer_Top_Block_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="Scaler_Streamer_Top_Block_timing_summary_init.rpt"/>
+  <File Type="OPT-HWDEF" Name="Scaler_Streamer_Top_Block.hwdef"/>
+  <File Type="OPT-DCP" Name="Scaler_Streamer_Top_Block_opt.dcp"/>
+  <File Type="OPT-DRC" Name="Scaler_Streamer_Top_Block_drc_opted.rpt"/>
+  <File Type="OPT-TIMING" Name="Scaler_Streamer_Top_Block_timing_summary_opted.rpt"/>
+  <File Type="PWROPT-DRC" Name="Scaler_Streamer_Top_Block_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="Scaler_Streamer_Top_Block_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="Scaler_Streamer_Top_Block_placed.dcp"/>
+  <File Type="PLACE-IO" Name="Scaler_Streamer_Top_Block_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="Scaler_Streamer_Top_Block_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="Scaler_Streamer_Top_Block_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="Scaler_Streamer_Top_Block_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="Scaler_Streamer_Top_Block_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="Scaler_Streamer_Top_Block_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="Scaler_Streamer_Top_Block_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="Scaler_Streamer_Top_Block_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="Scaler_Streamer_Top_Block_postplace_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="Scaler_Streamer_Top_Block_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="Scaler_Streamer_Top_Block_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="Scaler_Streamer_Top_Block_drc_physopted.rpt"/>
+  <File Type="BG-BIT" Name="Scaler_Streamer_Top_Block.bit"/>
+  <File Type="PHYSOPT-TIMING" Name="Scaler_Streamer_Top_Block_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="Scaler_Streamer_Top_Block_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="Scaler_Streamer_Top_Block_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="Scaler_Streamer_Top_Block_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="Scaler_Streamer_Top_Block_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="Scaler_Streamer_Top_Block_drc_routed.pb"/>
+  <File Type="BITSTR-MSK" Name="Scaler_Streamer_Top_Block.msk"/>
+  <File Type="ROUTE-DRC-RPX" Name="Scaler_Streamer_Top_Block_drc_routed.rpx"/>
+  <File Type="BG-BGN" Name="Scaler_Streamer_Top_Block.bgn"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="Scaler_Streamer_Top_Block_methodology_drc_routed.rpt"/>
+  <File Type="BITSTR-RBT" Name="Scaler_Streamer_Top_Block.rbt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="Scaler_Streamer_Top_Block_methodology_drc_routed.rpx"/>
+  <File Type="BG-BIN" Name="Scaler_Streamer_Top_Block.bin"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="Scaler_Streamer_Top_Block_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="Scaler_Streamer_Top_Block_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="Scaler_Streamer_Top_Block_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="Scaler_Streamer_Top_Block_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="Scaler_Streamer_Top_Block_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="Scaler_Streamer_Top_Block_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="Scaler_Streamer_Top_Block_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="Scaler_Streamer_Top_Block_incremental_reuse_routed.rpt"/>
+  <File Type="RDI-RDI" Name="Scaler_Streamer_Top_Block.vdi"/>
+  <File Type="ROUTE-CLK" Name="Scaler_Streamer_Top_Block_clock_utilization_routed.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="Scaler_Streamer_Top_Block_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="Scaler_Streamer_Top_Block_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="Scaler_Streamer_Top_Block_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="Scaler_Streamer_Top_Block_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="Scaler_Streamer_Top_Block_timing_summary_postroute_physopted.rpx"/>
+  <File Type="BITSTR-NKY" Name="Scaler_Streamer_Top_Block.nky"/>
+  <File Type="BITSTR-BMM" Name="Scaler_Streamer_Top_Block_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="Scaler_Streamer_Top_Block.mmi"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="Sync_245_Controller.ltx"/>
-  <File Type="BITSTR-SYSDEF" Name="Sync_245_Controller.sysdef"/>
+  <File Type="BITSTR-LTX" Name="Scaler_Streamer_Top_Block.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="Scaler_Streamer_Top_Block.sysdef"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/ip/clk_wiz_0/clk_wiz_0.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Sync_245_Controller.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/TempImgCreator.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PPRDIR/../Loopback-FPGA/fpga_usb_sync_245.srcs/sources_1/new/async_fifo.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -79,7 +100,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/Sync_245_Controller.v">
+    <File Path="$PSRCDIR/sources_1/new/Scaler_Streamer_Top_Block.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -88,13 +109,19 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="Sync_245_Controller"/>
-      <Option Name="TopAutoSet" Val="TRUE"/>
+      <Option Name="TopModule" Val="Scaler_Streamer_Top_Block"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/Sync_Scaler_Constraint.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
     <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/Sync_Scaler_Constraint.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>

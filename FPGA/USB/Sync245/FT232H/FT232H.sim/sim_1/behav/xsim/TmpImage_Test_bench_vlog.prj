@@ -1,0 +1,10 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../FT232H.srcs/sources_1/new/TempImgCreator.v" \
+"../../../../FT232H.srcs/sim_1/new/TmpImage_Test_bench.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

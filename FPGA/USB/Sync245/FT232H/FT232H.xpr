@@ -31,20 +31,20 @@
     <Option Name="DSAVendor" Val="xilinx"/>
     <Option Name="DSABoardId" Val="neso"/>
     <Option Name="DSANumComputeUnits" Val="16"/>
-    <Option Name="WTXSimLaunchSim" Val="38"/>
+    <Option Name="WTXSimLaunchSim" Val="80"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="0"/>
-    <Option Name="WTModelSimExportSim" Val="0"/>
-    <Option Name="WTQuestaExportSim" Val="0"/>
-    <Option Name="WTIesExportSim" Val="0"/>
-    <Option Name="WTVcsExportSim" Val="0"/>
-    <Option Name="WTRivieraExportSim" Val="0"/>
-    <Option Name="WTActivehdlExportSim" Val="0"/>
+    <Option Name="WTXSimExportSim" Val="1"/>
+    <Option Name="WTModelSimExportSim" Val="1"/>
+    <Option Name="WTQuestaExportSim" Val="1"/>
+    <Option Name="WTIesExportSim" Val="1"/>
+    <Option Name="WTVcsExportSim" Val="1"/>
+    <Option Name="WTRivieraExportSim" Val="1"/>
+    <Option Name="WTActivehdlExportSim" Val="1"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -55,6 +55,27 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/sources_1/ip/clk_wiz_0/clk_wiz_0.xci">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/Sync_245_Controller.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/TempImgCreator.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PPRDIR/../Loopback-FPGA/fpga_usb_sync_245.srcs/sources_1/new/async_fifo.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -69,7 +90,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/Sync_245_Controller.v">
+      <File Path="$PSRCDIR/sources_1/new/Scaler_Streamer_Top_Block.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -78,19 +99,33 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="Sync_245_Controller"/>
-        <Option Name="TopAutoSet" Val="TRUE"/>
+        <Option Name="TopModule" Val="Scaler_Streamer_Top_Block"/>
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
       <Filter Type="Constrs"/>
+      <File Path="$PSRCDIR/constrs_1/new/Sync_Scaler_Constraint.xdc">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+        </FileInfo>
+      </File>
       <Config>
+        <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/Sync_Scaler_Constraint.xdc"/>
         <Option Name="ConstrsType" Val="XDC"/>
       </Config>
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
       <File Path="$PSRCDIR/sim_1/new/Sync_245_Test_Bench.v">
         <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sim_1/new/TmpImage_Test_bench.v">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -105,7 +140,6 @@
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="Sync_245_Test_Bench"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
-        <Option Name="TopAutoSet" Val="TRUE"/>
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>
         <Option Name="SrcSet" Val="sources_1"/>
@@ -141,11 +175,11 @@
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017">
-        <ReportConfig Name="synth_1_synth_report_utilization_0" Spec="report_utilization" RunStep="synth_design" ReportFile="Sync_245_Controller_utilization_synth.rpt" Version="1" Minor="0">
+        <ReportConfig Name="synth_1_synth_report_utilization_0" Spec="report_utilization" RunStep="synth_design" ReportFile="Scaler_Streamer_Top_Block_utilization_synth.rpt" Version="1" Minor="0">
           <ReportConfigOption Name="dummy_option" Type="string"/>
-          <ReportConfigOutputOption Name="pb" Type="string" Value="Sync_245_Controller_utilization_synth.pb"/>
+          <ReportConfigOutputOption Name="pb" Type="string" Value="Scaler_Streamer_Top_Block_utilization_synth.pb"/>
         </ReportConfig>
-        <ReportConfig Name="synth_1_synth_synthesis_report_0" Spec="" RunStep="synth_design" ReportFile="Sync_245_Controller.vds">
+        <ReportConfig Name="synth_1_synth_synthesis_report_0" Spec="" RunStep="synth_design" ReportFile="Scaler_Streamer_Top_Block.vds">
           <ReportConfigOption Name="dummy_option" Type="string"/>
         </ReportConfig>
       </ReportStrategy>
@@ -172,10 +206,10 @@
           <ReportConfigOption Name="dummy_option" Type="string"/>
           <ReportConfigOutputOption Name="rpx" Type="string" Value=""/>
         </ReportConfig>
-        <ReportConfig Name="impl_1_opt_report_drc_0" Spec="report_drc" RunStep="opt_design" ReportFile="Sync_245_Controller_drc_opted.rpt" Version="1" Minor="0">
+        <ReportConfig Name="impl_1_opt_report_drc_0" Spec="report_drc" RunStep="opt_design" ReportFile="Scaler_Streamer_Top_Block_drc_opted.rpt" Version="1" Minor="0">
           <ReportConfigOption Name="dummy_option" Type="string"/>
-          <ReportConfigOutputOption Name="pb" Type="string" Value="Sync_245_Controller_drc_opted.pb"/>
-          <ReportConfigOutputOption Name="rpx" Type="string" Value="Sync_245_Controller_drc_opted.rpx"/>
+          <ReportConfigOutputOption Name="pb" Type="string" Value="Scaler_Streamer_Top_Block_drc_opted.pb"/>
+          <ReportConfigOutputOption Name="rpx" Type="string" Value="Scaler_Streamer_Top_Block_drc_opted.rpx"/>
         </ReportConfig>
         <ReportConfig Name="impl_1_opt_report_timing_summary_0" Spec="report_timing_summary" RunStep="opt_design" Version="1" Minor="0" IsDisabled="true">
           <ReportConfigOption Name="dummy_option" Type="string"/>
@@ -185,14 +219,14 @@
           <ReportConfigOption Name="dummy_option" Type="string"/>
           <ReportConfigOutputOption Name="rpx" Type="string" Value=""/>
         </ReportConfig>
-        <ReportConfig Name="impl_1_place_report_io_0" Spec="report_io" RunStep="place_design" ReportFile="Sync_245_Controller_io_placed.rpt" Version="1" Minor="0">
+        <ReportConfig Name="impl_1_place_report_io_0" Spec="report_io" RunStep="place_design" ReportFile="Scaler_Streamer_Top_Block_io_placed.rpt" Version="1" Minor="0">
           <ReportConfigOption Name="dummy_option" Type="string"/>
         </ReportConfig>
-        <ReportConfig Name="impl_1_place_report_utilization_0" Spec="report_utilization" RunStep="place_design" ReportFile="Sync_245_Controller_utilization_placed.rpt" Version="1" Minor="0">
+        <ReportConfig Name="impl_1_place_report_utilization_0" Spec="report_utilization" RunStep="place_design" ReportFile="Scaler_Streamer_Top_Block_utilization_placed.rpt" Version="1" Minor="0">
           <ReportConfigOption Name="dummy_option" Type="string"/>
-          <ReportConfigOutputOption Name="pb" Type="string" Value="Sync_245_Controller_utilization_placed.pb"/>
+          <ReportConfigOutputOption Name="pb" Type="string" Value="Scaler_Streamer_Top_Block_utilization_placed.pb"/>
         </ReportConfig>
-        <ReportConfig Name="impl_1_place_report_control_sets_0" Spec="report_control_sets" RunStep="place_design" ReportFile="Sync_245_Controller_control_sets_placed.rpt" Version="1" Minor="0">
+        <ReportConfig Name="impl_1_place_report_control_sets_0" Spec="report_control_sets" RunStep="place_design" ReportFile="Scaler_Streamer_Top_Block_control_sets_placed.rpt" Version="1" Minor="0">
           <ReportConfigOption Name="dummy_option" Type="string"/>
         </ReportConfig>
         <ReportConfig Name="impl_1_place_report_incremental_reuse_0" Spec="report_incremental_reuse" RunStep="place_design" Version="1" Minor="0" IsDisabled="true">
@@ -213,36 +247,36 @@
           <ReportConfigOption Name="dummy_option" Type="string"/>
           <ReportConfigOutputOption Name="rpx" Type="string" Value=""/>
         </ReportConfig>
-        <ReportConfig Name="impl_1_route_report_drc_0" Spec="report_drc" RunStep="route_design" ReportFile="Sync_245_Controller_drc_routed.rpt" Version="1" Minor="0">
+        <ReportConfig Name="impl_1_route_report_drc_0" Spec="report_drc" RunStep="route_design" ReportFile="Scaler_Streamer_Top_Block_drc_routed.rpt" Version="1" Minor="0">
           <ReportConfigOption Name="dummy_option" Type="string"/>
-          <ReportConfigOutputOption Name="pb" Type="string" Value="Sync_245_Controller_drc_routed.pb"/>
-          <ReportConfigOutputOption Name="rpx" Type="string" Value="Sync_245_Controller_drc_routed.rpx"/>
+          <ReportConfigOutputOption Name="pb" Type="string" Value="Scaler_Streamer_Top_Block_drc_routed.pb"/>
+          <ReportConfigOutputOption Name="rpx" Type="string" Value="Scaler_Streamer_Top_Block_drc_routed.rpx"/>
         </ReportConfig>
-        <ReportConfig Name="impl_1_route_report_methodology_0" Spec="report_methodology" RunStep="route_design" ReportFile="Sync_245_Controller_methodology_drc_routed.rpt" Version="1" Minor="0">
+        <ReportConfig Name="impl_1_route_report_methodology_0" Spec="report_methodology" RunStep="route_design" ReportFile="Scaler_Streamer_Top_Block_methodology_drc_routed.rpt" Version="1" Minor="0">
           <ReportConfigOption Name="dummy_option" Type="string"/>
-          <ReportConfigOutputOption Name="pb" Type="string" Value="Sync_245_Controller_methodology_drc_routed.pb"/>
-          <ReportConfigOutputOption Name="rpx" Type="string" Value="Sync_245_Controller_methodology_drc_routed.rpx"/>
+          <ReportConfigOutputOption Name="pb" Type="string" Value="Scaler_Streamer_Top_Block_methodology_drc_routed.pb"/>
+          <ReportConfigOutputOption Name="rpx" Type="string" Value="Scaler_Streamer_Top_Block_methodology_drc_routed.rpx"/>
         </ReportConfig>
-        <ReportConfig Name="impl_1_route_report_power_0" Spec="report_power" RunStep="route_design" ReportFile="Sync_245_Controller_power_routed.rpt" Version="1" Minor="0">
+        <ReportConfig Name="impl_1_route_report_power_0" Spec="report_power" RunStep="route_design" ReportFile="Scaler_Streamer_Top_Block_power_routed.rpt" Version="1" Minor="0">
           <ReportConfigOption Name="dummy_option" Type="string"/>
-          <ReportConfigOutputOption Name="pb" Type="string" Value="Sync_245_Controller_power_summary_routed.pb"/>
-          <ReportConfigOutputOption Name="rpx" Type="string" Value="Sync_245_Controller_power_routed.rpx"/>
+          <ReportConfigOutputOption Name="pb" Type="string" Value="Scaler_Streamer_Top_Block_power_summary_routed.pb"/>
+          <ReportConfigOutputOption Name="rpx" Type="string" Value="Scaler_Streamer_Top_Block_power_routed.rpx"/>
         </ReportConfig>
-        <ReportConfig Name="impl_1_route_report_route_status_0" Spec="report_route_status" RunStep="route_design" ReportFile="Sync_245_Controller_route_status.rpt" Version="1" Minor="0">
+        <ReportConfig Name="impl_1_route_report_route_status_0" Spec="report_route_status" RunStep="route_design" ReportFile="Scaler_Streamer_Top_Block_route_status.rpt" Version="1" Minor="0">
           <ReportConfigOption Name="dummy_option" Type="string"/>
-          <ReportConfigOutputOption Name="pb" Type="string" Value="Sync_245_Controller_route_status.pb"/>
+          <ReportConfigOutputOption Name="pb" Type="string" Value="Scaler_Streamer_Top_Block_route_status.pb"/>
         </ReportConfig>
-        <ReportConfig Name="impl_1_route_report_timing_summary_0" Spec="report_timing_summary" RunStep="route_design" ReportFile="Sync_245_Controller_timing_summary_routed.rpt" Version="1" Minor="0">
+        <ReportConfig Name="impl_1_route_report_timing_summary_0" Spec="report_timing_summary" RunStep="route_design" ReportFile="Scaler_Streamer_Top_Block_timing_summary_routed.rpt" Version="1" Minor="0">
           <ReportConfigOption Name="dummy_option" Type="string"/>
-          <ReportConfigOutputOption Name="rpx" Type="string" Value="Sync_245_Controller_timing_summary_routed.rpx"/>
+          <ReportConfigOutputOption Name="rpx" Type="string" Value="Scaler_Streamer_Top_Block_timing_summary_routed.rpx"/>
         </ReportConfig>
-        <ReportConfig Name="impl_1_route_report_incremental_reuse_0" Spec="report_incremental_reuse" RunStep="route_design" ReportFile="Sync_245_Controller_incremental_reuse_routed.rpt" Version="1" Minor="0">
-          <ReportConfigOption Name="dummy_option" Type="string"/>
-        </ReportConfig>
-        <ReportConfig Name="impl_1_route_report_clock_utilization_0" Spec="report_clock_utilization" RunStep="route_design" ReportFile="Sync_245_Controller_clock_utilization_routed.rpt" Version="1" Minor="0">
+        <ReportConfig Name="impl_1_route_report_incremental_reuse_0" Spec="report_incremental_reuse" RunStep="route_design" ReportFile="Scaler_Streamer_Top_Block_incremental_reuse_routed.rpt" Version="1" Minor="0">
           <ReportConfigOption Name="dummy_option" Type="string"/>
         </ReportConfig>
-        <ReportConfig Name="impl_1_route_implementation_log_0" Spec="" RunStep="route_design" ReportFile="Sync_245_Controller.vdi">
+        <ReportConfig Name="impl_1_route_report_clock_utilization_0" Spec="report_clock_utilization" RunStep="route_design" ReportFile="Scaler_Streamer_Top_Block_clock_utilization_routed.rpt" Version="1" Minor="0">
+          <ReportConfigOption Name="dummy_option" Type="string"/>
+        </ReportConfig>
+        <ReportConfig Name="impl_1_route_implementation_log_0" Spec="" RunStep="route_design" ReportFile="Scaler_Streamer_Top_Block.vdi">
           <ReportConfigOption Name="dummy_option" Type="string"/>
         </ReportConfig>
         <ReportConfig Name="impl_1_post_route_phys_opt_report_timing_summary_0" Spec="report_timing_summary" RunStep="post_route_phys_opt_design" Version="1" Minor="0">
