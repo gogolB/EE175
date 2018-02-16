@@ -2,8 +2,8 @@
 # Webtalk v2017.3 (64-bit)
 # SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
 # IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
-# Start of session at: Fri Feb  9 17:29:01 2018
-# Process ID: 15280
+# Start of session at: Fri Feb  9 19:57:20 2018
+# Process ID: 1336
 # Current directory: C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.sim/sim_1/synth/func/xsim
 # Command line: wbtcv.exe -mode batch -source C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.sim/sim_1/synth/func/xsim/xsim.dir/Sync_245_Test_Bench_func_synth/webtalk/xsim_webtalk.tcl -notrace
 # Log file: C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.sim/sim_1/synth/func/xsim/webtalk.log

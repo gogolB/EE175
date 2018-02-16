@@ -2,8 +2,8 @@
 # Vivado v2017.3 (64-bit)
 # SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
 # IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
-# Start of session at: Fri Feb  9 18:00:47 2018
-# Process ID: 2932
+# Start of session at: Fri Feb 16 12:52:30 2018
+# Process ID: 15936
 # Current directory: C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.runs/synth_1
 # Command line: vivado.exe -log Scaler_Streamer_Top_Block.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Scaler_Streamer_Top_Block.tcl
 # Log file: C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.runs/synth_1/Scaler_Streamer_Top_Block.vds

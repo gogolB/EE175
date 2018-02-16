@@ -1,0 +1,7 @@
+Running: xsim.dir/Streamer_Test_Bench_time_synth/xsimk.exe -simmode gui -wdb Streamer_Test_Bench_time_synth.wdb -simrunnum 0 -socket 59578
+Design successfully loaded
+Design Loading Memory Usage: 10584 KB (Peak: 10584 KB)
+Design Loading CPU Usage: 15 ms
+Simulation completed
+Simulation Memory Usage: 12832 KB (Peak: 12832 KB)
+Simulation CPU Usage: 30 ms

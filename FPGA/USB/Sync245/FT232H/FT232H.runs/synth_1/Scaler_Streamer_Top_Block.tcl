@@ -16,7 +16,9 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_msg_config -id {Common 17-41} -limit 10000000
+set_param synth.incrementalSynthesisCache C:/Xilinx/Vivado/2017.3/bin/.Xil/Vivado-15484-Gogol-Laptop/incrSyn
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7a100tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -38,8 +40,7 @@ read_verilog -library xil_defaultlib {
   C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/Loopback-FPGA/fpga_usb_sync_245.srcs/sources_1/new/graycounter.v
   C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/sources_1/new/Scaler_Streamer_Top_Block.v
 }
-read_ip -quiet c:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
-set_property used_in_implementation false [get_files -all c:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
+read_ip -quiet C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
 set_property used_in_implementation false [get_files -all c:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
 
@@ -54,8 +55,6 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 read_xdc C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/constrs_1/new/Sync_Scaler_Constraint.xdc
 set_property used_in_implementation false [get_files C:/Users/Gogol/Desktop/ClassWork/EE175/FPGA/USB/Sync245/FT232H/FT232H.srcs/constrs_1/new/Sync_Scaler_Constraint.xdc]
 
-read_xdc dont_touch.xdc
-set_property used_in_implementation false [get_files dont_touch.xdc]
 
 synth_design -top Scaler_Streamer_Top_Block -part xc7a100tcsg324-1
 

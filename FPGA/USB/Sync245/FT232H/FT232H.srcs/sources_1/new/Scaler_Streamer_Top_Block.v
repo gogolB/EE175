@@ -47,6 +47,12 @@ module Scaler_Streamer_Top_Block(
     
     wire[7:0] dataBus;
     
+    reg dataGood;
+    
+    wire[7:0] hostDataBus;
+    wire newHostData;
+    reg readHostData;
+    
     TempImgCreator imgStreamer(.CLK(clk_36M),
                                .CLKOUT(clk_from_data_to_controller),
                                .dataOut(dataBus),
@@ -58,5 +64,95 @@ module Scaler_Streamer_Top_Block(
                                    .WR(ftdi_wr),
                                    .RD(ftdi_rd),
                                    .OE(ftdi_oe),
-                                   .CLKOUT(ftdi_clk));
+                                   .CLKOUT(ftdi_clk),
+                                   
+                                   .inputData(dataBus),
+                                   .inputClock(clk_from_data_to_controller),
+                                   .inputDataGood(dataGood),
+                                   
+                                   .hostData(hostDataBus),
+                                   .outputClock(clk_100M),
+                                   .readData(readHostData),
+                                   .hasData(newHostData),
+                                   
+                                   .reset(global_rst)
+                                   );
+                                   
+                                   
+    reg[3:0] state;
+    parameter WAIT_FOR_START = 0,STREAMING=1, READ_HOST_DATA=2,PROCESS_HOST_DATA=3,RESET=4;
+    
+    reg[9:0] counter;
+    
+    always@(state) begin
+        case(state)
+            RESET: begin
+                global_rst <= 1;
+                dataGood <= 0;
+                readHostData <= 0;
+            end
+            WAIT_FOR_START: begin
+                global_rst <= 0;
+                dataGood <= 0;
+                readHostData <= 0;
+            end
+            STREAMING: begin
+                global_rst <= 0;
+                dataGood <= 1;
+                readHostData <=0;
+            end
+            READ_HOST_DATA: begin
+                readHostData <=1;
+            end
+            PROCESS_HOST_DATA: begin
+                readHostData <= 0;
+            end
+            default: begin
+                global_rst <= 1;
+                dataGood <= 0;
+                readHostData <=0;
+            end
+        endcase
+    end
+    
+    always@(posedge sys_clk) begin
+        case(state)
+            default: begin
+                state = RESET;
+                counter = 0;
+            end
+            
+            RESET: begin
+                counter <= counter + 1;
+                if(counter >= 10'h003)
+                    state = WAIT_FOR_START;
+            end
+            
+            WAIT_FOR_START: begin
+                if(newHostData)
+                    state = READ_HOST_DATA;
+                else
+                    state = WAIT_FOR_START;
+            end
+            
+            READ_HOST_DATA: begin
+                state = PROCESS_HOST_DATA;
+            end
+            
+            PROCESS_HOST_DATA: begin
+                if (hostDataBus == 8'b10101010)
+                    state = STREAMING;
+                else
+                    state = WAIT_FOR_START;
+            end
+            
+            STREAMING: begin
+                state = STREAMING;
+            end
+            
+        endcase
+    
+    end
+    
+    
 endmodule

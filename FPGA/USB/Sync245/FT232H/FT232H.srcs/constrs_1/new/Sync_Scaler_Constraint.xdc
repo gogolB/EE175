@@ -6,7 +6,8 @@ set_property CONFIG_VOLTAGE 3.3 [current_design]
 #####################################################################
 
 set_property PACKAGE_PIN F4 [get_ports sys_clk]
-#
+set_property IOSTANDARD LVCMOS33 [get_ports sys_clk]
+create_clock -period 10.000 -name sys_clk -waveform {0.000 5.000} [get_ports sys_clk]
 
 #####################################################################
 #                         FTDI 232H CHIP                            #
@@ -14,7 +15,7 @@ set_property PACKAGE_PIN F4 [get_ports sys_clk]
 
 #set_property SLEW FAST [get_ports  {Header_P4[*]}]
 #set_property IOSTANDARD LVCMOS33 [get_ports {Header_P4[*]}]
-set_property SLEW FAST [get_ports {ftdi_d[*]}]
+#set_property SLEW FAST [get_ports {ftdi_d[*]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {ftdi_d[*]}]
 
 #set_property PACKAGE_PIN A14 [get_ports {Header_P4[0]}]
@@ -42,17 +43,17 @@ set_property IOSTANDARD LVCMOS33 [get_ports ftdi_txe]
 #set_property PACKAGE_PIN B13 [get_ports {Header_P4[9]}]
 set_property PACKAGE_PIN B13 [get_ports ftdi_txe]
 
-set_property SLEW FAST [get_ports ftdi_wr]
+#set_property SLEW FAST [get_ports ftdi_wr]
 set_property IOSTANDARD LVCMOS33 [get_ports ftdi_wr]
 #set_property PACKAGE_PIN A16 [get_ports {Header_P4[10]}]
 set_property PACKAGE_PIN A16 [get_ports ftdi_wr]
 
-set_property SLEW FAST [get_ports ftdi_rd]
+#set_property SLEW FAST [get_ports ftdi_rd]
 set_property IOSTANDARD LVCMOS33 [get_ports ftdi_rd]
 #set_property PACKAGE_PIN A15 [get_ports {Header_P4[11]}]
 set_property PACKAGE_PIN A15 [get_ports ftdi_rd]
 
-set_property SLEW FAST [get_ports ftdi_oe]
+#set_property SLEW FAST [get_ports ftdi_oe]
 set_property IOSTANDARD LVCMOS33 [get_ports ftdi_oe]
 #set_property PACKAGE_PIN A9  [get_ports {Header_P4[12]}]
 set_property PACKAGE_PIN A9 [get_ports ftdi_oe]
@@ -84,25 +85,17 @@ set_property PACKAGE_PIN A10 [get_ports ftdi_clk]
 #set_property PACKAGE_PIN D5 [get_ports {Header_P4[33]}]
 
 
-create_clock -period 16.667 -name ftdi_clk -waveform {0.000 8.334} [get_ports ftdi_clk]
+
+create_clock -period 16.667 -name ftdi_clk -waveform {0.000 8.333} [get_ports ftdi_clk]
+
+
+
 create_generated_clock -name {controller/dataRxFifo/pWrite_counter/pNextToWrite[5]} -source [get_ports ftdi_clk] -divide_by 1 [get_pins {controller/dataRxFifo/pWrite_counter/graycount_reg[5]/Q}]
 create_generated_clock -name {controller/dataRxFifo/pWrite_counter/pNextToWrite[6]} -source [get_ports ftdi_clk] -divide_by 1 [get_pins {controller/dataRxFifo/pWrite_counter/graycount_reg[6]/Q}]
 create_generated_clock -name {controller/dataTxFifo/pRead_counter/pNextToRead[5]} -source [get_ports ftdi_clk] -divide_by 1 [get_pins {controller/dataTxFifo/pRead_counter/graycount_reg[5]/Q}]
 create_generated_clock -name {controller/dataTxFifo/pRead_counter/pNextToRead[6]} -source [get_ports ftdi_clk] -divide_by 1 [get_pins {controller/dataTxFifo/pRead_counter/graycount_reg[6]/Q}]
-create_generated_clock -name {controller/state[0]} -source [get_ports ftdi_clk] -divide_by 1 [get_pins {controller/state_reg[0]/Q}]
-create_generated_clock -name {controller/state[1]} -source [get_ports ftdi_clk] -divide_by 1 [get_pins {controller/state_reg[1]/Q}]
-create_generated_clock -name {controller/state[2]} -source [get_ports ftdi_clk] -divide_by 1 [get_pins {controller/state_reg[2]/Q}]
-set_input_delay -clock [get_clocks ftdi_clk] -clock_fall -min 2.000 [get_ports ftdi_rxf]
-set_input_delay -clock [get_clocks ftdi_clk] -clock_fall -max 6.000 [get_ports ftdi_rxf]
-set_input_delay -clock [get_clocks ftdi_clk] -clock_fall -min 2.000 [get_ports ftdi_txe]
-set_input_delay -clock [get_clocks ftdi_clk] -clock_fall -max 6.000 [get_ports ftdi_txe]
-set_output_delay -clock [get_clocks ftdi_clk] -clock_fall -min -2.000 [get_ports {ftdi_d[*]}]
-set_output_delay -clock [get_clocks ftdi_clk] -clock_fall -max 4.000 [get_ports {ftdi_d[*]}]
-set_output_delay -clock [get_clocks ftdi_clk] -clock_fall -min 0.000 [get_ports ftdi_oe]
-set_output_delay -clock [get_clocks ftdi_clk] -clock_fall -max 4.000 [get_ports ftdi_oe]
-set_output_delay -clock [get_clocks ftdi_clk] -clock_fall -min -2.000 [get_ports ftdi_rd]
-set_output_delay -clock [get_clocks ftdi_clk] -clock_fall -max 4.000 [get_ports ftdi_rd]
-set_output_delay -clock [get_clocks ftdi_clk] -clock_fall -min 0.000 [get_ports ftdi_wr]
-set_output_delay -clock [get_clocks ftdi_clk] -clock_fall -max 2.000 [get_ports ftdi_wr]
-
-
+create_generated_clock -name {controller/state_0[0]} -source [get_ports ftdi_clk] -divide_by 1 [get_pins {controller/state_reg[0]/Q}]
+create_generated_clock -name {controller/state_0[1]} -source [get_ports ftdi_clk] -divide_by 1 [get_pins {controller/state_reg[1]/Q}]
+create_generated_clock -name {controller/state_0[2]} -source [get_ports ftdi_clk] -divide_by 1 [get_pins {controller/state_reg[2]/Q}]
+create_generated_clock -name {controller/state_0[3]} -source [get_ports ftdi_clk] -divide_by 1 [get_pins {controller/state_reg[3]/Q}]
+create_generated_clock -name {state[1]} -source [get_ports sys_clk] -divide_by 1 [get_pins {state_reg[1]/Q}]

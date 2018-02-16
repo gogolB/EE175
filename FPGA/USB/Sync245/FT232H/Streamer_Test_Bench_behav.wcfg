@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="Streamer_Test_Bench_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="Streamer_Test_Bench" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="118600001fs"></ZoomEndTime>
+      <Cursor1Time time="0fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="174"></NameColumnWidth>
+      <ValueColumnWidth column_width="132"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="28" />
+   <wvobject fp_name="/Streamer_Test_Bench/inputData" type="array">
+      <obj_property name="ElementShortName">inputData[7:0]</obj_property>
+      <obj_property name="ObjectShortName">inputData[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Streamer_Test_Bench/uut/state" type="array">
+      <obj_property name="ElementShortName">state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">state[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Streamer_Test_Bench/uut/counter" type="array">
+      <obj_property name="ElementShortName">counter[9:0]</obj_property>
+      <obj_property name="ObjectShortName">counter[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Streamer_Test_Bench/sendDataFromHost" type="logic">
+      <obj_property name="ElementShortName">sendDataFromHost</obj_property>
+      <obj_property name="ObjectShortName">sendDataFromHost</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Streamer_Test_Bench/uut/hostDataBus" type="array">
+      <obj_property name="ElementShortName">hostDataBus[7:0]</obj_property>
+      <obj_property name="ObjectShortName">hostDataBus[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider94">
+      <obj_property name="label">245 Controller</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Streamer_Test_Bench/CLKIN" type="logic">
+      <obj_property name="ElementShortName">CLKIN</obj_property>
+      <obj_property name="ObjectShortName">CLKIN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Streamer_Test_Bench/d" type="array">
+      <obj_property name="ElementShortName">d[7:0]</obj_property>
+      <obj_property name="ObjectShortName">d[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Streamer_Test_Bench/uut/controller/state" type="array">
+      <obj_property name="ElementShortName">state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">state[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Streamer_Test_Bench/rxf" type="logic">
+      <obj_property name="ElementShortName">rxf</obj_property>
+      <obj_property name="ObjectShortName">rxf</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Streamer_Test_Bench/txe" type="logic">
+      <obj_property name="ElementShortName">txe</obj_property>
+      <obj_property name="ObjectShortName">txe</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Streamer_Test_Bench/wr" type="logic">
+      <obj_property name="ElementShortName">wr</obj_property>
+      <obj_property name="ObjectShortName">wr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Streamer_Test_Bench/rd" type="logic">
+      <obj_property name="ElementShortName">rd</obj_property>
+      <obj_property name="ObjectShortName">rd</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Streamer_Test_Bench/oe" type="logic">
+      <obj_property name="ElementShortName">oe</obj_property>
+      <obj_property name="ObjectShortName">oe</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider87">
+      <obj_property name="label">CLKS</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Streamer_Test_Bench/SYS_CLK_100M" type="logic">
+      <obj_property name="ElementShortName">SYS_CLK_100M</obj_property>
+      <obj_property name="ObjectShortName">SYS_CLK_100M</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Streamer_Test_Bench/uut/controller/inputClock" type="logic">
+      <obj_property name="ElementShortName">inputClock</obj_property>
+      <obj_property name="ObjectShortName">inputClock</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Streamer_Test_Bench/uut/controller/outputClock" type="logic">
+      <obj_property name="ElementShortName">outputClock</obj_property>
+      <obj_property name="ObjectShortName">outputClock</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider83">
+      <obj_property name="label">Img Generator</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Streamer_Test_Bench/uut/imgStreamer/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Streamer_Test_Bench/uut/imgStreamer/CLK" type="logic">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Streamer_Test_Bench/uut/imgStreamer/dataOut" type="array">
+      <obj_property name="ElementShortName">dataOut[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dataOut[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider88">
+      <obj_property name="label">CLKDIV</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Streamer_Test_Bench/uut/clkDiv/clk_out1" type="logic">
+      <obj_property name="ElementShortName">clk_out1</obj_property>
+      <obj_property name="ObjectShortName">clk_out1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Streamer_Test_Bench/uut/clkDiv/clk_out2" type="logic">
+      <obj_property name="ElementShortName">clk_out2</obj_property>
+      <obj_property name="ObjectShortName">clk_out2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Streamer_Test_Bench/uut/clkDiv/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Streamer_Test_Bench/uut/clkDiv/locked" type="logic">
+      <obj_property name="ElementShortName">locked</obj_property>
+      <obj_property name="ObjectShortName">locked</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Streamer_Test_Bench/uut/clkDiv/clk_in1" type="logic">
+      <obj_property name="ElementShortName">clk_in1</obj_property>
+      <obj_property name="ObjectShortName">clk_in1</obj_property>
+   </wvobject>
+</wave_config>

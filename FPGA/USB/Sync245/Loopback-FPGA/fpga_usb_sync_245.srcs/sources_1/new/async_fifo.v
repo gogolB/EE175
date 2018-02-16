@@ -26,7 +26,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module async_fifo#(parameter datawidth = 8, parameter DATADEPTH = 128, parameter addresswidth = $clog2(DATADEPTH))(
+module async_fifo#(parameter datawidth = 8, parameter DATADEPTH = 32, parameter addresswidth = $clog2(DATADEPTH))(
     input wire reset,
     
     // Reading
@@ -95,10 +95,10 @@ module async_fifo#(parameter datawidth = 8, parameter DATADEPTH = 128, parameter
 
     always @ (set_Status, rst_Status, reset) begin
         if(rst_Status | reset) begin
-            status = 0; // Going Empty
+            status <= 0; // Going Empty
         end
         else if(set_Status) begin
-            status = 1; // Going Full
+            status <= 1; // Going Full
         end
     end
     

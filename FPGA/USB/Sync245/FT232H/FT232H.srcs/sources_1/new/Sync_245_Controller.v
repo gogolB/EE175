@@ -40,6 +40,7 @@ module Sync_245_Controller(
     output [7:0] hostData,
     input wire outputClock,
     input  wire readData,
+    output hasData,
     
     input reset
     );
@@ -50,6 +51,12 @@ module Sync_245_Controller(
     wire txFIFOEmpty;
     wire rxFIFOFull;
     wire rxFIFOEmpty;
+    
+    wire[7:0] dataToSend;
+    
+    assign D = sendData ? dataToSend:8'hz;
+    
+    assign hasData = ~rxFIFOEmpty;
     
     initial begin
         WR <= 1;
@@ -65,7 +72,7 @@ module Sync_245_Controller(
                           .inputData(inputData),
                           .read_clk(CLKOUT),
                           .read_en(sendData),
-                          .outputData(D),
+                          .outputData(dataToSend),
                           .full(txFIFOFull),
                           .empty(txFIFOEmpty));
                           
@@ -91,10 +98,11 @@ module Sync_245_Controller(
             end
             
             RD_START: begin
-                RD <= 0;
+                
             end
             
             READ_DATA: begin
+                RD <= 0;
                 recvData <= 1;
             end
             
@@ -211,6 +219,7 @@ module Sync_245_Controller(
             WR_STOP: begin
                 state = IDLE;
             end
+        
         endcase
      end
      

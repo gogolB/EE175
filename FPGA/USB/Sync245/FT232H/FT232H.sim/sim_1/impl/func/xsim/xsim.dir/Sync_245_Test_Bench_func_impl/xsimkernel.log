@@ -2,3 +2,6 @@ Running: xsim.dir/Sync_245_Test_Bench_func_impl/xsimk.exe -simmode gui -wdb Sync
 Design successfully loaded
 Design Loading Memory Usage: 7064 KB (Peak: 7064 KB)
 Design Loading CPU Usage: 15 ms
+Simulation completed
+Simulation Memory Usage: 7764 KB (Peak: 7764 KB)
+Simulation CPU Usage: 15 ms
