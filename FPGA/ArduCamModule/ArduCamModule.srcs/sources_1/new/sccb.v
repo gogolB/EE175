@@ -22,10 +22,9 @@
 module sccb #(parameter CLK = 24000000) (    // system clock at 24MHz
     input wire clk,
     input wire [15:0] addr_data,
-    input wire sda_in,  // ack from slave
     output reg [7:0] reg_loc,    // location in cameraReg to get addr_data
     output reg scl,    // sccb clock
-    output reg sda_out);   // sccb data time
+    inout wire sda);   // sccb data
     
     localparam CAMERA_ID_W = 8'h84;    // Address to write to camera regs
     localparam IDLE = 0;
@@ -49,12 +48,14 @@ module sccb #(parameter CLK = 24000000) (    // system clock at 24MHz
     reg [7:0] tx_data = 0;	// store data to tx
     reg [7:0] addr = 0; // address of camera reg
     reg [7:0] data = 0; // data to modify camera reg
+    reg sda_out = 1;
 
     initial begin
         scl = 1;
-        sda_out = 1;
 		reg_loc = reg_loc_val;
     end
+
+    assign sda = sda_out;
 
     always@(posedge clk) begin
         case(state)
